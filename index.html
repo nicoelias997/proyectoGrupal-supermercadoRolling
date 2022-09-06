@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="body">
     <header>
-      <nav class="navbar navbar-expand-lg bg-danger ">
+      <nav class="navbar navbar-expand-lg colorNav ">
         <div class="container-fluid">
           <a class="navbar-brand text-white" href="index.html">Nombre</a>
           <button
@@ -58,7 +58,7 @@
                 placeholder="Que quieres pedir?"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn btn-outline-dark" type="submit">
                 Buscar
               </button>
             </form>
@@ -68,139 +68,160 @@
     </header>
     <main>
       <section class="container">
-
         <article>
-            
+            <!-- VENTANA MODAL AQUI DEJO EL LOGIN DEL ULTIMO FORM QUE USAMOS CON EMILSE -->
+    <aside class="col-12 col-md-6">
+      <form class="bg-light p-3 " >
+        <div class="mb-3 " id="nombre">
+          <label for="nombre">Nombre y apellido *</label>
+          <input type="text"  class="form-control "/>
+          <div class="invalid-feedback">prueba de feedback</div>
+          <div class="valid-feedback">cuando Todo esta bien</div>
+        </div>
+        <div class="mb-3">
+          <label for="edad">Edad *</label>
+          <input type="text"  class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="dni">DNI *</label>
+          <input type="text"  class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="genero">Género</label>
+          <select  class="form-control">
+            <option value="">Seleccione una opcion</option>
+            <option value="H">Hombre</option>
+            <option value="M">Mujer</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="peso"
+            >Peso <small class="text-muted">(Kg)</small></label
+          >
+          <input type="text"  class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="altura"
+            >Altura <small class="text-muted">(mts)</small></label
+          >
+          <input type="text"  class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label for="fechaNacimiento"
+            >Año de Nacimiento *<small class="text-muted"
+              >(desde 1930)</small
+            ></label
+          >
+          <input type="number"  class="form-control" />
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+        
+        <div class="alert alert-danger mt-3 d-none" role="alert" id="msjError">
+        </div>
+      </form>
+    </aside>
         </article>
 
-
-
-        <article class="row">
-          <div class="card m-1 col-12 col-md-6 col col-lg-4" >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Bebidas</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
+        <article class="row d-flex justify-content-center ">
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4 " style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn  cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4 " style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn  cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn  cardBtn text-white">Go somewhere</a>
             </div>
           </div>
 
-          <div class="card m-1 col-12 col-md-6 col col-lg-4" >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Helados</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4 " style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn  cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4 " style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn  cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4 " style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn  cardBtn text-white">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn  cardBtn text-white">Go somewhere</a>
             </div>
           </div>
 
-          <div class="card m-1 col-12 col-md-6 col col-lg-4" >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Jugos</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card m-1 col-sm-12 col-md-6 col-lg-4 " style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
 
-          <div class="card m-1 col-12 col-md-6 col col-lg-4" >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">hiegiene</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card m-1 col-12 col-md-6 col col-lg-4 " >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">autos</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card m-1 col-12 col-md-6 col col-lg-4" >
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">.....</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </article>
 
       </section>
@@ -226,7 +247,7 @@
             </article>
       </section>
     </main>
-    <footer class="text-center bg-danger text-white py-5">&copy;todos los derechos reservados
+    <footer class="text-center colorNav text-white py-5">&copy;todos los derechos reservados
     </footer>
     <!-- JavaScript Bundle with Popper -->
     <script
@@ -234,5 +255,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="js/app.js" type="module"></script>
   </body>
 </html>
