@@ -1,3 +1,4 @@
+
 // import { validarEmail } from "./validaciones";
 
 // const email = document.getElementById("email").value
@@ -16,3 +17,4 @@
 //           })
 //     }
 // } 
+
