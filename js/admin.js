@@ -5,6 +5,7 @@ import {
   validarImagen,
   validarNombre,
   validarCantidad,
+  validarPrecio,
 } from "./validaciones.js";
 import { Producto } from "./classProducto.js";
 
@@ -14,8 +15,9 @@ let listaProductos = [];
 let codigo = document.querySelector("#codigo");
 let nombre = document.querySelector("#nombreProd");
 let descripcion = document.querySelector("#descripcion");
-let cantidad = document.querySelector("#cantidad");
 let imagen = document.querySelector("#imagen");
+let cantidad = document.querySelector("#cantidad");
+let precio = document.querySelector("#precio");
 let genero = document.querySelector("#genero");
 
 let btnCrearProducto = document.querySelector("#btnCrearProducto");
@@ -38,6 +40,9 @@ imagen.addEventListener("blur", () => {
 });
 cantidad.addEventListener("blur", () => {
   validarCantidad(cantidad);
+});
+precio.addEventListener("blur", () => {
+  validarPrecio(precio);
 });
 genero.addEventListener("blur", () => {
   validarGenero(genero);
@@ -62,6 +67,7 @@ function guardarProducto(e) {
     validarDescription(descripcion) &&
     validarImagen(imagen) &&
     validarCantidad(cantidad) &&
+    validarPrecio(precio) &&
     validarGenero(genero) && productoNuevo
   ) {
     //si los datos son correctos
@@ -71,6 +77,7 @@ function guardarProducto(e) {
       descripcion.value,
       imagen.value,
       cantidad.value,
+      precio.value,
       genero.value
     );
 
@@ -112,6 +119,7 @@ function crearLista(producto) {
     <td>${producto.descripcion}</td>
     <td>${producto.imagen}</td>
     <td>${producto.cantidad}</td>
+    <td>${producto.precio}</td>
     <td>${producto.genero}</td>
     <td>
       <button class="btn btn-warning" onclick='modificarProducto("${producto.codigo}")'>
@@ -182,8 +190,9 @@ window.modificarProducto = function (codigoBuscado) {
   codigo.value = productoBuscado.codigo;
   nombre.value = productoBuscado.nombre;
   descripcion.value = productoBuscado.descripcion;
-  cantidad.value = productoBuscado.cantidad;
   imagen.value = productoBuscado.imagen;
+  cantidad.value = productoBuscado.cantidad;
+  precio.value = productoBuscado.precio;
   genero.value = productoBuscado.genero;
 };
 
@@ -196,8 +205,9 @@ function actualizarProducto() {
   //Modificar los valores dentro del arreglo
   listaProductos[posicionProductoBuscado].nombre = nombre.value;
   listaProductos[posicionProductoBuscado].descripcion = descripcion.value;
-  listaProductos[posicionProductoBuscado].cantidad = cantidad.value;
   listaProductos[posicionProductoBuscado].imagen = imagen.value;
+  listaProductos[posicionProductoBuscado].cantidad = cantidad.value;
+  listaProductos[posicionProductoBuscado].precio = precio.value;
   listaProductos[posicionProductoBuscado].genero = genero.value;
   //Actualizar el localstorage
   guardarProductosEnLocalStorage();

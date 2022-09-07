@@ -67,3 +67,14 @@ export function validarCantidad(cantidad){
         return false
     }
 }
+export function validarPrecio(precio){
+    if(isNaN(precio)){
+    precio.className = "form-control is-valid"
+    console.log("DAtazo")
+    return true;
+    } else {
+        precio.className="form-control is-invalid"
+        console.log("adsasdasDAtazo")
+        return false
+    }
+}
