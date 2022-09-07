@@ -8,7 +8,7 @@ let listaProductos = []
 let codigo = document.querySelector("#codigo");
 let nombre = document.querySelector("#nombreProd");
 let descripcion = document.querySelector("#descripcion");
-let cantida = document.querySelector("#cantidad");
+let cantidad = document.querySelector("#cantidad");
 let imagen = document.querySelector("#imagen");
 let genero = document.querySelector("#genero");
 
@@ -41,7 +41,7 @@ function guardarProducto(e){
 
    if(validarNombre(nombre) && validarDescription(descripcion) && validarImagen(imagen) && validarCantidad(cantidad) && validarGenero(genero)){
    //si los datos son correctos
-   let nuevoProducto =  new Producto(codigo.value, nombre.value, descripcion.value, imagen.value,cantidad.value, genero.value);
+   let nuevoProducto =  new Producto(codigo.value, nombre.value, descripcion.value, imagen.value, cantidad.value, genero.value);
    
    console.log(nuevoProducto)
    listaProductos.push(nuevoProducto);
@@ -86,7 +86,7 @@ function crearLista(producto){
       <button class="btn btn-warning" >
         <i class="bi bi-pencil-square"></i>
       </button>
-      <button class="btn btn-danger">
+      <button class="btn btn-danger" onclick='borrarProducto("${producto.codigo}")'>
         <i class="bi bi-x-square"></i>
       </button>
     </td>
@@ -98,3 +98,46 @@ function guardarProductosEnLocalStorage(){
     localStorage.setItem('listaProductosKey', JSON.stringify(listaProductos));
 }
 cargaInicial();
+
+window.borrarProducto = function (codigo) {
+  //mostrar una pregunta al usuario
+  Swal.fire({
+    title: "Borrar producto",
+    text: "¿Esta seguro de eliminar el producto? Este proceso no se puede revertir",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#ffd803",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    console.log(result);
+    if (result.isConfirmed) {
+      //aqui quiero borrar la producto
+      // console.log(codigo)
+      //buscar la producto en el arreglo y borrarla
+      let copiaListaProductos = listaProductos.filter(
+        (itemProducto) => itemProducto.codigo != codigo
+      );
+      listaProductos = copiaListaProductos;
+      //actualizar el localstorage
+      guardarProductosEnLocalStorage();
+      //actualizar la tabla
+      borrarTabla();
+      cargaInicial();
+
+      // mostrar mensaje de operacion correcta
+      Swal.fire(
+        "Producto borrado",
+        "El producto se elimino correctamente",
+        "success"
+      );
+    }
+  });
+};
+
+function borrarTabla() {
+  let tablaProductos = document.querySelector("#tablaProductos");
+  tablaProductos.innerHTML = "";
+};
+
