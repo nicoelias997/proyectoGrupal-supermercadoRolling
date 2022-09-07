@@ -56,13 +56,13 @@ export function validarGenero(genero){
     }
 }
 
-export function validarTamanio(tamanio){
-    if(isNaN(tamanio)){
-    tamanio.className = "form-control is-valid"
+export function validarCantidad(cantida){
+    if(isNaN(cantidad)){
+    cantidad.className = "form-control is-valid"
     console.log("DAtazo")
     return true;
     } else {
-        tamanio.className="form-control is-invalid"
+        cantidad.className="form-control is-invalid"
         console.log("adsasdasDAtazo")
         return false
     }
