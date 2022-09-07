@@ -16,24 +16,24 @@
 //           })
 //     }
 
-//verificar si el localstorage tiene datos
+//Comprueba si el localStorage tiene datos
 let listaProductos =
   JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 let grillaProductos = document.querySelector("#grillaProductos");
 
-//chequear si el arreglo listaProductos tiene algo
+//Comprueba si listaProductos tiene algo
 if (listaProductos.length > 0) {
-  //entonces dibujo las cards
+  //Si es true maqueta las cards
   listaProductos.map((producto) => {
     crearColumna(producto);
   });
 } else {
-  //mostrar un mensaje intuitivo para el usuario
+  grillaProductos.innerHTML = `<h1 class="display-1 fw-bold m-5 text-center">Por el momento no se encuentran productos en la tienda</h1>
+  <h2 class="display-2 fw-bold mb-5">Por favor vuelva a ingresar mas tarde</h2>`
 }
 
 function crearColumna(producto) {
-  //traer el elemento grillaProductos de las columnas
-  // dibujar una columna con su respectiva card
+  // Maqueta cada card que se encuentre en el la lista
   grillaProductos.innerHTML += `
   <article class="card m-2 p-1" style="width: 15rem;">
   <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
