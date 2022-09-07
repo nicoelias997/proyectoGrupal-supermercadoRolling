@@ -46,10 +46,11 @@
           </ul>
           </div>
           
-          <div class="dropdown">
+          <div class="row">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
               Identificarse
             </button>
+
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -65,23 +66,19 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-                        <button type="submit" class="btn btn-primary" id="btn-identificarse">Identificarme</button>
+                        <button type="button" class="btn btn-primary" id="btn-identificarse">Identificarme</button>
                       </div>
                     </div>
                   </div>
                 </div> 
-            </div>  
-            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-              Carrito
-            </a> 
-            
-      </div>
-     
-
-        </div>
+            </div>
+          </div>  
+        </div>           
     </nav>
   </header>
+
   <main class="container-fluid">
+    <div class="col col-12">
     <div class="d-flex flex-wrap justify-content-center align-items-center">
     <div class="card m-2 p-1" style="width: 15rem;">
       <img src="https://picsum.photos/50" class="card-img-top" alt="...">
@@ -188,8 +185,14 @@
         </button>
       </div>
     </div>
+  </div>
+ 
+  <div class="col-4" id="carritoCompras">
+
 
   </div>
+
+</div>
   </main>
  
 
