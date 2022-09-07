@@ -109,9 +109,6 @@
                   id="codigo"
                   type="text"
                   class="form-control"
-                  placeholder="123"
-                  maxlength="5"
-                  minlength="1"
                   disabled
                 />
               </div>
@@ -124,6 +121,7 @@
                   placeholder="Ej: Banana"
                   maxlength="60"
                   minlength="2"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -135,6 +133,7 @@
                   placeholder="Ej. Cosechadas en Brasil, maduradacion de 5 meses, etc."
                   maxlength="200"
                   minlength="2"
+                  required
                 ></textarea>
               </div>
               
@@ -147,6 +146,7 @@
                   placeholder="https://picsum.photos/200"
                   maxlength="120"
                   minlength="2"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -156,8 +156,9 @@
                   type="number"
                   class="form-control"
                   placeholder="Ej. 500, orden de gramos,ml"
-                  maxlength="10"
-                  minlength="1"
+                  max="100"
+                  min="1"
+                  required
                 />
               </div>
               <div class="mb-3">
