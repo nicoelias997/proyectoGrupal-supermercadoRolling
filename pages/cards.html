@@ -14,70 +14,187 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-danger ">
-            <div class="container-fluid">
-              <a class="navbar-brand text-white" href="../index.html">Nombre</a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="../index.html"
-                      >Pagina Principal</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="cards.html">Productos</a>
-                  </li>
-                  <li class="nav-item ">
-                    <a
-                      class="nav-link text-white" href="acercaDNosotros.html">acerca de nosotros
-                    </a>
-                    </ul>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Que quieres pedir?"
-                    aria-label="Search"
-                  />
-                  <button class="btn btn-outline-success" type="submit">
-                    Buscar
-                  </button>
-                </form>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <main>
+  <header>
+     <nav class="navbar navbar-expand-lg bg-warning row">
+      <div class="d-flex justify-content-evenly">
 
-<section>
-    <article class="container" id="DetalleDeCard">
-        <p>Coca Cola</p>
-        <P>$2150</P>
-        <p>Bebidas</p>
-        <img src="" alt="">
-        <p>Coca cola es la gaseosa mas vendida</p>
-        <p>25 botellas en stck</p>
-    </article>
-</section>
+      <div class="justify-content-center">
+          <ul class="navbar-nav">
+            <li class="nav-item mr-3">
+              <a class="navbar-brand" href="#">  <img src="https://picsum.photos/40" alt="">Supermercado</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Categorias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mis compras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Acerca de</a>
+            </li>
+          </ul>
+        </div >
+
+          <div class="justify-content-center">
+          <ul class="navbar-nav col">
+            <li class="nav-item ">
+              <input id="search" name="search" class="form-control" placeholder="Buscar productos" autocomplete="off" aria-label="Search" data-test="search-input" value="">
+          </li>   
+          <li class="nav-item">
+            <button type="search" class="btn btn-secondary" >Buscar</button>
+          </li>
+          </ul>
+          </div>
+          
+          <div class="dropdown">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+              Identificarse
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Identificarse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="email" class="col-form-label">Ingrese su email:</label>
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+                        <button type="submit" class="btn btn-primary" id="btn-identificarse">Identificarme</button>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+            </div>  
+            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+              Carrito
+            </a> 
+            
+      </div>
+     
+
+        </div>
+    </nav>
+  </header>
+  <main class="container-fluid">
+    <div class="d-flex flex-wrap justify-content-center align-items-center">
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/50" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar
+        </button>
+      </div>
+    </div>
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar
+        </button>
+      </div>
+    </div>
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar
+        </button>
+      </div>
+    </div>
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar
+        </button>
+      </div>
+    </div>
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar
+        </button>
+      </div>
+    </div>
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar
+        </button>
+      </div>
+    </div>
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>
+
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar al carro
+        </button>
+      </div>
+    </div>
+    <div class="card m-2 p-1" style="width: 15rem;">
+      <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Producto</li>
+          <li class="list-group-item">Tamaño</li>
+          <li class="list-group-item">Precio</li>
+        </ul>   
+        <button class="col-12 btn btn-danger agregarCarro" type="submit">
+          Agregar
+        </button>
+      </div>
+    </div>
+
+  </div>
+  </main>
+ 
 
 
 
-
-    </main>
     <footer class="text-center bg-danger text-white py-5">&copy;todos los derechos reservados
     </footer>
     <script
@@ -86,7 +203,7 @@
       crossorigin="anonymous"
     ></script>
   <!-- VENTANA MODAL AQUI DEJO EL LOGIN DEL ULTIMO FORM QUE USAMOS CON EMILSE -->
-    <aside class="col-12 col-md-6">
+    <!-- <aside class="col-12 col-md-6">
         <form class="bg-light p-3" ">
           <div class="mb-3">
             <label for="nombre">Nombre y apellido *</label>
@@ -135,7 +252,7 @@
           <div class="alert alert-danger mt-3 d-none" role="alert" id="msjError">
           </div>
         </form>
-      </aside>
+      </aside> -->
 
 </body>
 </html>
