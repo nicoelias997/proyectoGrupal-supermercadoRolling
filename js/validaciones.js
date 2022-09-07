@@ -56,7 +56,7 @@ export function validarGenero(genero){
     }
 }
 
-export function validarCantidad(cantida){
+export function validarCantidad(cantidad){
     if(isNaN(cantidad)){
     cantidad.className = "form-control is-valid"
     console.log("DAtazo")
