@@ -1,14 +1,20 @@
-import { Persona } from "./classPersonas";
 
-let nombre = document.getElementById("nombre");
+// import { validarEmail } from "./validaciones";
 
-function nombre(input) {
-  let nombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
-  if (nombre.test(input.value)) {
-    input.classname = "form-control is-valid";
-    return true;
-  } else{
-    input.classname = "form-control is-invalid";
-    return false;
-  }
-}
+// const email = document.getElementById("email").value
+// const btnIdentificarse = document.getElementById("btn-identificarse");
+// btnIdentificarse.addEventListener("click", (() => {identificarse}))
+
+// const identificarse = () => {
+//     if(validarEmail(email)){
+//         Swal.fire('Any fool can use a computer')
+//     } else {
+//         Swal.fire({
+//             icon: 'error',
+//             title: 'Oops...',
+//             text: 'Something went wrong!',
+//             footer: '<a href="">Why do I have this issue?</a>'
+//           })
+//     }
+// } 
+
