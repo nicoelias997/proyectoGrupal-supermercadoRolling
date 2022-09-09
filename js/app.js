@@ -19,8 +19,8 @@
 //Comprueba si el localStorage tiene datos
 let listaProductos =
   JSON.parse(localStorage.getItem("listaProductosKey")) || [];
-let grillaProductos = document.querySelector("#grillaProductos");
-
+let grillaProductos = document.getElementById("grillaProductos");
+let carritoContainer = document.getElementById("carritoContainer")
 //Comprueba si listaProductos tiene algo
 if (listaProductos.length > 0) {
   //Si es true maqueta las cards
@@ -43,11 +43,38 @@ function crearColumna(producto) {
       <li class="list-group-item">${producto.cantidad}</li>
       <li class="list-group-item">$ ${producto.precio}</li>
     </ul>
-    <button class="col-12 btn btn-danger agregarCarro" type="submit">
+    <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
       Agregar
     </button>
   </div>
 </article>`;
+}
+let listaProductosCarrito = [];
+
+//Funcion para agregar producto al carrito
+function agregarAlCarro(productoCarro) {
+  let productoAgregado = listaProductos.find(
+    (producto) => producto.codigo === productoCarro
+  );
+  //Comprueba que el producto no se encuentre ya en la lista del carrito 
+  if (!listaProductosCarrito.includes(productoAgregado)) {
+    listaProductosCarrito.push(productoAgregado);
+    carritoContainer.innerHTML += `<article class="d-flex ">
+    <div class="w-25 me-4">
+      <img class="w-100" src="${productoAgregado.imagen}" alt="${productoAgregado.nombre}">
+    </div>
+    <div>
+      <h5 class="h4 mb-0">${productoAgregado.nombre}</h5>
+      <p class="ms-1 mb-0">$${productoAgregado.precio}</p>
+      <div class="d-flex align-items-center ms-1 ">
+        <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-left"></i></button>
+        <p class="fs-5 mb-0 mx-1">${productoAgregado.cantidad}</p>
+        <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-right"></i></i></button>
+      </div>
+    </div>
+  </article>
+  <hr>`
+  }
 }
 
 // function verDetalle(codigo) {
