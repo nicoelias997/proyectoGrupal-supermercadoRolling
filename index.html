@@ -63,12 +63,13 @@
                   <div class="modal-body">
                     <form>
                       <div class="mb-3">
-                        <label for="email" class="col-form-label">Ingrese su email:</label>
-                        <input type="email" class="form-control" id="email">
+                        
+                        <input type="text" placeholder="ingrese su correo electronico" id="txtCorreo" id="email">
+                        <input type="password" placeholder="ingrese su contraseña" id="txtContraseña">
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-                        <button type="button" class="btn btn-primary" id="btn-identificarse">Identificarme</button>
+                        <input type="button" value="ingresar" id="btnIngresar"></input>
                       </div>
                     </div>
                   </div>
@@ -76,11 +77,11 @@
             </div>
             
           </div> 
-          <div>
+          <!-- <div>
           <a class="fs-5 text-center text-white justify-content-center" id="linkAdmin" type="link" href="/pages/administrador.html">
             admin
           </a> 
-        </div> 
+        </div>  -->
          
         </div>           
     </nav>
@@ -210,6 +211,6 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
-
+    <script src="js/sesion.js"></script>
 </body>
 </html>
