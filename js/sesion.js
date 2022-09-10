@@ -1,8 +1,9 @@
 function obtenerListaUsuario() {
   let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioLs"));
-  if (listaUsuario == null) {[
-    (listaUsuario = ["1", "manu", " ibañez", "manuel@gmail.com","manuel", "071202", "1"]),
-      ["2", "manuel", " ibañez", "manue@gmail","manuel", "071202", "2"]]
+  if (listaUsuario == null) {
+    listaUsuario =
+    [  ["1", "manu", " ibañez", "manuel@gmail.com","manuel", "071202", "1"],
+      ["2", "manuel", " ibañez", "martin@gmail","martin", "071202", "2"]]
   }
 
   return listaUsuario
@@ -40,11 +41,22 @@ function iniciarSession(){
 
     Bacesso  = validar(correoIngresado, contraseñaIngresada);
     console.log(Bacesso)
-    // if(Bacesso == true ){
-    //     ingresar();
-    // }
+    if(Bacesso == true ){
+        ingresar();
+    }
 }
-// function ingresar(){
-//     switch()
+function ingresar(){
+  let rol= sessionStorage.getItem('rolUsuarioActivo');
+    switch(rol){
+   case '1':
+    window.location.href = 'administrador.html';
+    break;
+    case '2':
+    window.location.href = 'index.html';
+    break;
+    default:
+      window.location.href = 'index.html';
+    break;
+    }
 
-// }
+}
