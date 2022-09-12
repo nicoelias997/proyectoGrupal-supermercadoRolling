@@ -45,12 +45,15 @@ function crearColumna(producto) {
     <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
       Agregar
     </button>
-    <a href="/detalle" class="d-flex justify-content-center mt-2 link-danger" id="linkVerMas">
-    <i class="bi bi-info-square-fill"></i>
-    </a>
+    <button class="btn btn-primary" type="button" onclick="verDetalle('${producto.codigo}')">Ver mas</button>
   </div>
 </article>`;
 }
+
+/* <a href="/pages/detalle.html" class="d-flex justify-content-center mt-2 link-danger" onclick="verDetalle('${producto.codigo}') id="linkVerMas">
+<i class="bi bi-info-square-fill"></i>
+</a> */
+
 let listaProductosCarrito = [];
 
 //Funcion para agregar producto al carrito
@@ -79,10 +82,9 @@ function agregarAlCarro(productoCarro) {
   }
 }
 
-// function verDetalle(codigo) {
-//   console.log(codigo);
-//   console.log(window.location);
-//   console.log(window.location.origin + "/pages/detalle.html?codigo=" + codigo);
-//   window.location.href =
-//     window.location.origin + "/pages/detalle.html?codigo=" + codigo;
-// }
+function verDetalle(codigo){
+  console.log(codigo);
+  console.log(window.location.origin+'/pages/detalle.html?codigo='+codigo);
+  window.location.href = window.location.origin+'/pages/detalle.html?codigo='+codigo
+
+}
