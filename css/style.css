@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Dosis&family=Inconsolata&family=Montserrat&family=Oswald:wght@400;500&family=Russo+One&family=Satisfy&display=swap");
+
 *{
     margin: 0px;
     padding: 0px ;
@@ -13,3 +15,29 @@
         background-color: #3a6a6f ;
     
     }
+/* Imagenes */
+.filtro {
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #074f55;
+    }
+  
+    #fondo {
+      background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display:grid;
+    }
+  
+  /* Fuentes */
+  
+  body{
+      font-family: 'Dosis', sans-serif;
+  }
+  
+  /* card Nosotros */
+  
+  .NostrosCard{
+    background-color: #074f55;
+    color: #ffffff;
+    box-shadow: 10px 10px 10px gray;
+  }
