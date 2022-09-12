@@ -17,27 +17,27 @@
     }
 /* Imagenes */
 .filtro {
-    border-radius: 15px;
-    box-shadow: 10px 10px 10px #074f55;
-    }
-  
-    #fondo {
-      background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      display:grid;
-    }
-  
-  /* Fuentes */
-  
-  body{
-      font-family: 'Dosis', sans-serif;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px #074f55;
   }
-  
-  /* card Nosotros */
-  
-  .NostrosCard{
-    background-color: #074f55;
-    color: #ffffff;
-    box-shadow: 10px 10px 10px gray;
+
+  #fondo {
+    background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:grid;
   }
+
+/* Fuentes */
+
+body{
+    font-family: 'Dosis', sans-serif;
+}
+
+/* card Nosotros */
+
+.NostrosCard{
+  background-color: #074f55;
+  color: #ffffff;
+  box-shadow: 10px 10px 10px gray;
+}
