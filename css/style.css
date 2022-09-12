@@ -6,3 +6,19 @@
 #linkAdmin{
     text-decoration: none;
 }
+
+.footerCol {
+    width: 30%;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 993px) {
+    .footerCol {
+      width: 48%;
+    }
+  }
+  
+  @media all and (max-width: 768px) {
+    .footerCol {
+      width: 96%;
+    }
+  }
