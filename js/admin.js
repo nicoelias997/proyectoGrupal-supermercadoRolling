@@ -131,6 +131,7 @@ function crearLista(producto) {
     </td>
   </tr>`;
   console.log(tablaProductos);
+  limpiarFormulario()
 }
 
 function guardarProductosEnLocalStorage() {
