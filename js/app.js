@@ -19,22 +19,37 @@
 //Comprueba si el localStorage tiene datos
 let listaProductos =
   JSON.parse(localStorage.getItem("listaProductosKey")) || [];
-let grillaProductos = document.getElementById("grillaProductos");
-let carritoContainer = document.getElementById("carritoContainer")
+
+let listaProductosCarrito = [];
+let grillaTodos = document.getElementById("grillaTodos");
+let grillaAlmacen = document.getElementById("grillaAlmacen");
+let grillaBebidas = document.getElementById("grillaBebidas");
+let grillaFrutasVerduras = document.getElementById("grillaFrutasVerduras");
+let grillaCongelados = document.getElementById("grillaCongelados");
+let grillaPanaderia = document.getElementById("grillaPanaderia");
+let grillaLimpieza = document.getElementById("grillaLimpieza");
+let grillaCuidadoPersonal = document.getElementById("grillaCuidadoPersonal");
+let grillaMascotas = document.getElementById("grillaMascotas");
+let carritoContainer = document.getElementById("carritoContainer");
+
 //Comprueba si listaProductos tiene algo
 if (listaProductos.length > 0) {
   //Si es true maqueta las cards
   listaProductos.map((producto) => {
-    crearColumna(producto);
+    maquetadoProducto(producto);
   });
 } else {
-  grillaProductos.innerHTML = `<h1 class="display-1 fw-bold m-5 text-center">Por el momento no se encuentran productos en la tienda</h1>
-  <h2 class="display-2 fw-bold mb-5">Por favor vuelva a ingresar mas tarde</h2>`
+  //Si es false muestra un mensaje de stock agotado
+  grillaTodos.innerHTML = `<h1 class="display-1 fw-bold m-5 text-center">Por el momento no se encuentran productos en la tienda</h1>
+  <h2 class="display-2 fw-bold mb-5">Por favor vuelva a ingresar mas tarde</h2>`;
 }
 
-function crearColumna(producto) {
-  // Maqueta cada card que se encuentre en el la lista
-  grillaProductos.innerHTML += `
+//Funcion para maquetar el producto que se encuentre en el localStorage en su respectiva seccion
+function maquetadoProducto(producto) {
+  let categoria = producto.genero;
+
+  //Maqueta todos los productos de la lista
+  grillaTodos.innerHTML += `
   <article class="card m-2 p-1" style="width: 15rem;">
   <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
   <div class="card-body">
@@ -48,18 +63,156 @@ function crearColumna(producto) {
     </button>
   </div>
 </article>`;
+  //Maqueta los productos en sus respectivas categorias
+  switch (categoria) {
+    case "Almacen":
+      {
+        grillaAlmacen.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+  <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">${producto.nombre}</li>
+      <li class="list-group-item">${producto.cantidad}</li>
+      <li class="list-group-item">$ ${producto.precio}</li>
+    </ul>
+    <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+      Agregar
+    </button>
+  </div>
+</article>`;
+      }
+      break;
+    case "Bebidas":
+      {
+        grillaBebidas.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${producto.nombre}</li>
+            <li class="list-group-item">${producto.cantidad}</li>
+            <li class="list-group-item">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+        </div>
+      </article>`;
+      }
+      break;
+    case "Frutas y Verduras":
+      {
+        grillaFrutasVerduras.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${producto.nombre}</li>
+            <li class="list-group-item">${producto.cantidad}</li>
+            <li class="list-group-item">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+        </div>
+      </article>`;
+      }
+      break;
+    case "Congelados":
+      {
+        grillaCongelados.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${producto.nombre}</li>
+            <li class="list-group-item">${producto.cantidad}</li>
+            <li class="list-group-item">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+        </div>
+      </article>`;
+      }
+      break;
+    case "Panaderia":
+      {
+        grillaPanaderia.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${producto.nombre}</li>
+            <li class="list-group-item">${producto.cantidad}</li>
+            <li class="list-group-item">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+        </div>
+      </article>`;
+      }
+      break;
+    case "Limpieza":
+      {
+        grillaLimpieza.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${producto.nombre}</li>
+            <li class="list-group-item">${producto.cantidad}</li>
+            <li class="list-group-item">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+        </div>
+      </article>`;
+      }
+      break;
+    case "Cuidado Personal":
+      {
+        grillaCuidadoPersonal.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${producto.nombre}</li>
+            <li class="list-group-item">${producto.cantidad}</li>
+            <li class="list-group-item">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+        </div>
+      </article>`;
+      }
+      break;
+    case "Mascotas":
+      {
+        grillaMascotas.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">${producto.nombre}</li>
+            <li class="list-group-item">${producto.cantidad}</li>
+            <li class="list-group-item">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+        </div>
+      </article>`;
+      }
+      break;
+  }
 }
-let listaProductosCarrito = [];
 
 //Funcion para agregar producto al carrito
 function agregarAlCarro(productoCarro) {
   let productoAgregado = listaProductos.find(
     (producto) => producto.codigo === productoCarro
   );
-  //Comprueba que el producto no se encuentre ya en la lista del carrito 
+  //Comprueba que el producto no se encuentre en la lista del carrito para evitar maquetar 2 veces
   if (!listaProductosCarrito.includes(productoAgregado)) {
     listaProductosCarrito.push(productoAgregado);
-    carritoContainer.innerHTML += `<article class="d-flex ">
+    carritoContainer.innerHTML += `<article class="d-flex">
     <div class="w-25 me-4">
       <img class="w-100" src="${productoAgregado.imagen}" alt="${productoAgregado.nombre}">
     </div>
@@ -73,7 +226,7 @@ function agregarAlCarro(productoCarro) {
       </div>
     </div>
   </article>
-  <hr>`
+  <hr>`;
   }
 }
 

@@ -24,21 +24,45 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
           <a class="navbar-brand text-light" href="#">Supermercado</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 ">
+            <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active text-light" aria-current="page" href="#">Categorias</a>
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="#"
+                  >Categorias</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light" href="#">Acerca de</a>
               </li>
             </ul>
             <form class="d-flex mx-lg-auto">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
-              <button class="btn btn-outline-success btn-outline-light" type="submit">Search</button>
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="search"
+              />
+              <button
+                class="btn btn-outline-success btn-outline-light"
+                type="submit"
+              >
+                Search
+              </button>
             </form>
           </div>
           <div>
@@ -118,165 +142,306 @@
           </button>
         </div>
       </nav>
-      <!-- <nav class="navbar navbar-expand-lg bg-danger row ">
-        <div class="d-flex justify-content-evenly">
-          <div class="">
-            <ul class="navbar-nav">
-              <li class="nav-item mr-3">
-                <a class="navbar-brand text-white" href="#">Supermercado</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">Categorias</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">Acerca de</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="justify-content-center">
-            <ul class="navbar-nav col">
-              <li class="nav-item">
-                <input
-                  id="search"
-                  name="search"
-                  class="form-control"
-                  placeholder="Buscar productos"
-                  autocomplete="off"
-                  aria-label="Search"
-                  data-test="search-input"
-                  value=""
-                />
-              </li>
-              <li class="nav-item">
-                <button type="search" class="btn btn-outline-light text-white">
-                  Buscar
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div class="row">
-            <button
-              type="button"
-              class="btn btn-outline-light text-white"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              data-bs-whatever="@mdo"
-            >
-              Identificarse
-            </button>
-
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                      Identificarse
-                    </h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="mb-3">
-                        <input
-                          type="text"
-                          placeholder="ingrese su correo electronico"
-                          id="txtCorreo"
-                          id="email"
-                        />
-                        <input
-                          type="password"
-                          placeholder="ingrese su contraseña"
-                          id="txtContraseña"
-                        />
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          cerrar
-                        </button>
-                        <button
-                          type="button"
-                          value="ingresar"
-                          id="btnIngresar"
-                        ></button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button
-            class="btn btn-outline-light"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasRight"
-            aria-controls="offcanvasRight"
-          >
-            <i class="bi bi-cart4"></i>
-          </button>
-        </div>
-      </nav> -->
-    </header>
-
-    <main class="container-fluid">
+    </header> 
+    <main class="d-flex align-items-start">
       <section
-        class="d-flex flex-wrap justify-content-center align-items-center"
-        id="grillaProductos"
-      ></section>
+        class="nav flex-column nav-pills col-2"
+        id="v-pills-tab"
+        role="tablist"
+        aria-orientation="vertical"
+      >
+        <button
+          class="nav-link text-dark py-3 rounded-0 active text-start"
+          id="v-pills-todos-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-todos"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-todos"
+          aria-selected="true"
+        >
+          Todos
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-almacen-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-almacen"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-almacen"
+          aria-selected="false"
+        >
+          Almacén
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-bebidas-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-bebidas"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-bebidas"
+          aria-selected="false"
+        >
+          Bebidas
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-frutasVerduras-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-frutasVerduras"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-frutasVerduras"
+          aria-selected="false"
+        >
+          Frutas y Verduras
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-congelados-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-congelados"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-congelados"
+          aria-selected="false"
+        >
+          Congelados
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-panaderia-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-panaderia"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-panaderia"
+          aria-selected="false"
+        >
+          Panadería
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-limpieza-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-limpieza"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-limpieza"
+          aria-selected="false"
+        >
+          Limpieza
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-cuidadoPersonal-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-cuidadoPersonal"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-cuidadoPersonal"
+          aria-selected="false"
+        >
+          Cuidado Personal
+        </button>
+        <button
+          class="nav-link text-dark py-3 rounded-0 text-start"
+          id="v-pills-mascotas-tab"
+          data-bs-toggle="pill"
+          data-bs-target="#v-pills-mascotas"
+          type="button"
+          role="tab"
+          aria-controls="v-pills-mascotas"
+          aria-selected="false"
+        >
+          Mascotas
+        </button>
+      </section>
+      <section class="col-10 tab-content" id="v-pills-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="v-pills-todos"
+          role="tabpanel"
+          aria-labelledby="v-pills-todos-tab"
+          tabindex="0"
+        >
+          <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaTodos"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-almacen"
+          role="tabpanel"
+          aria-labelledby="v-pills-almacen-tab"
+          tabindex="0"
+        >
+          <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaAlmacen"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-bebidas"
+          role="tabpanel"
+          aria-labelledby="v-pills-bebidas-tab"
+          tabindex="0"
+        >
+          <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaBebidas"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-frutasVerduras"
+          role="tabpanel"
+          aria-labelledby="v-pills-frutasVerduras-tab"
+          tabindex="0"
+        >
+          <div
+            class="
+            id="grillaBebida"
+          >
+            <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaFrutasVerduras"></div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-congelados"
+          role="tabpanel"
+          aria-labelledby="v-pills-congelados-tab"
+          tabindex="0"
+        >
+          <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaCongelados"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-panaderia"
+          role="tabpanel"
+          aria-labelledby="v-pills-panaderia-tab"
+          tabindex="0"
+        >
+          <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaPanaderia"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-limpieza"
+          role="tabpanel"
+          aria-labelledby="v-pills-limpieza-tab"
+          tabindex="0"
+        >
+        <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaLimpieza"></div>
+      </div></div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-cuidadoPersonal"
+          role="tabpanel"
+          aria-labelledby="v-pills-cuidadoPersonal-tab"
+          tabindex="0"
+        >
+          <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaCuidadoPersonal"></div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="v-pills-mascotas"
+          role="tabpanel"
+          aria-labelledby="v-pills-mascotas-tab"
+          tabindex="0"
+        >
+          <div class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center" id="grillaMascotas"></div>
+        </div>
+      </section>
     </main>
 
     <footer class="bg-danger text-light">
       <section class="container d-flex flex-wrap justify-content-between">
         <article class="footerCol pt-4">
           <h3 class="fw-bolder">Navegación</h3>
-          <ul class="list-unstyled list-group ">
-            <li class="mb-1"><a class="link-light text-decoration-none" href="index.html">Inicio</a></li>
-            <li class="mb-1"><a class="link-light text-decoration-none" href="quienesSomos.html">¿Quienes somos?</a></li>
-            <li class="mb-1"><a class="link-light text-decoration-none" href="listaDeseos.html">Lista de deseos</a></li>
+          <ul class="list-unstyled list-group">
+            <li class="mb-1">
+              <a class="link-light text-decoration-none" href="index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="link-light text-decoration-none"
+                href="quienesSomos.html"
+                >¿Quienes somos?</a
+              >
+            </li>
+            <li class="mb-1">
+              <a class="link-light text-decoration-none" href="listaDeseos.html"
+                >Lista de deseos</a
+              >
+            </li>
           </ul>
-          <div class="fs-1 ">
-            <a class="link-light" href="error.html"> <i class="bi bi-facebook me-3"></i></a>
-             <a class="link-light" href="error.html"><i class="bi bi-instagram me-3"></i></a>
-             <a class="link-light" href="error.html"><i class="bi bi-whatsapp"></i></a>
-           </div>
+          <div class="fs-1">
+            <a class="link-light" href="error.html">
+              <i class="bi bi-facebook me-3"></i
+            ></a>
+            <a class="link-light" href="error.html"
+              ><i class="bi bi-instagram me-3"></i
+            ></a>
+            <a class="link-light" href="error.html"
+              ><i class="bi bi-whatsapp"></i
+            ></a>
+          </div>
         </article>
         <article class="footerCol pt-4">
           <h3 class="fw-bolder">Contacto</h3>
-          <ul class="list-unstyled list-group ">
-            <li class="mb-1"><i class="bi bi-telephone-fill me-1"></i>+ 54 0381 425-0000 </li>
-            <li class="mb-1"><i class="bi bi-envelope-fill me-1"></i>consultas@supermercado.com</li>
-            <li class="mb-1"><i class="bi bi-geo-alt-fill me-1"></i>25 de mayo 500 - San Miguel de Tucuman</li>
+          <ul class="list-unstyled list-group">
+            <li class="mb-1">
+              <i class="bi bi-telephone-fill me-1"></i>+ 54 0381 425-0000
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-envelope-fill me-1"></i>consultas@supermercado.com
+            </li>
+            <li class="mb-1">
+              <i class="bi bi-geo-alt-fill me-1"></i>25 de mayo 500 - San Miguel
+              de Tucuman
+            </li>
           </ul>
-          
         </article>
         <article class="footerCol py-4">
           <h3 class="fw-bolder">Medios de pago</h3>
           <div class="row w-75">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/visa@2x.png" alt="">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/mastercard@2x.png" alt="">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/ar/tarjeta-naranja@2x.png" alt="">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/mastercarddebit@2x.png" alt="">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/rapipago@2x.png" alt="">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/pagofacil@2x.png" alt="">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/ar/banelco@2x.png" alt="">
-            <img class="col-3 my-1" src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/amex@2x.png" alt="">
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/visa@2x.png"
+              alt=""
+            />
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/mastercard@2x.png"
+              alt=""
+            />
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/ar/tarjeta-naranja@2x.png"
+              alt=""
+            />
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/mastercarddebit@2x.png"
+              alt=""
+            />
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/rapipago@2x.png"
+              alt=""
+            />
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/pagofacil@2x.png"
+              alt=""
+            />
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/ar/banelco@2x.png"
+              alt=""
+            />
+            <img
+              class="col-3 my-1"
+              src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/amex@2x.png"
+              alt=""
+            />
           </div>
         </article>
         <article></article>
