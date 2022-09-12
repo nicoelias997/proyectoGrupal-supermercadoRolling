@@ -14,12 +14,12 @@ let listaUsuario = obtenerListaUsuario()
 let accesso= false
 
 for(let i = 0; i < listaUsuario.length ; i++){
-    if(correo ==listaUsuario[i][3] &&contraseña == listaUsuario [i][4]){
+    if(correo ==listaUsuario[i][3]&&contraseña == listaUsuario[i][4]){
 
         
         accesso == true;
-        sessionStorage.setItem('usuarioActivo',listaUsuario[i][1] + '' + listaUsuario[i] [2])    
-        sessionStorage.setItem('rolUsuarioActivo', listaUsuario [i] [6] )
+        sessionStorage.setItem('usuarioActivo',listaUsuario[i][1] + '' + listaUsuario[i][2])    
+        sessionStorage.setItem('rolUsuarioActivo', listaUsuario[i][6])
     }
 }
 return accesso
