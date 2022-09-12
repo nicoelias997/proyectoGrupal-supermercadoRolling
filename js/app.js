@@ -39,13 +39,15 @@ function crearColumna(producto) {
   <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
   <div class="card-body">
     <ul class="list-group list-group-flush">
+
       <li class="list-group-item"><strong>${producto.nombre}</strong> <br>${producto.descripcion}</li>
+      
       <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
     </ul>
     <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
       Agregar
     </button>
-    <button class="btn btn-primary" type="button" onclick="verDetalle('${producto.codigo}')">Ver mas</button>
+    <button class="btn btn-outline-danger justify-self-end" type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
   </div>
 </article>`;
 }
