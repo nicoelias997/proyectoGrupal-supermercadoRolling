@@ -86,5 +86,4 @@ function verDetalle(codigo){
   console.log(codigo);
   console.log(window.location.origin+'/pages/detalle.html?codigo='+codigo);
   window.location.href = window.location.origin+'/pages/detalle.html?codigo='+codigo
-
 }
