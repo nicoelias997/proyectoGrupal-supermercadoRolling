@@ -6,3 +6,8 @@
 #linkAdmin{
     text-decoration: none;
 }
+
+.linkVerMas{
+    text-decoration: none;
+    background-color: red;
+}
