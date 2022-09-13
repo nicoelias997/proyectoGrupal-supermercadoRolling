@@ -27,10 +27,9 @@ if (listaProductos.length > 0) {
 //Funcion para maquetar el producto que se encuentre en el localStorage en su respectiva seccion
 function maquetadoProducto(producto) {
   let categoria = producto.genero;
-
   //Maqueta todos los productos de la lista
   grillaTodos.innerHTML += `
-  <article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+  <article class="card m-2 p-1 flex-nowrap " style="width: 12rem;">
   <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
   <div class="card-body">
     <ul class="list-group list-group-flush">
@@ -181,7 +180,7 @@ function maquetadoProducto(producto) {
       </article>`;
       }
       break;
-  }
+    }
 }
 
 let listaProductosCarrito = [];

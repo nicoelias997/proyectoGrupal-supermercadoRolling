@@ -1,6 +1,5 @@
 import {
   validarDescription,
-  validarEmail,
   validarGenero,
   validarImagen,
   validarNombre,

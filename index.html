@@ -21,9 +21,9 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+      <nav class="navbar navbar-expand-lg navbar-light colorNav d-none d-sm-flex">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="#">Supermercado</a>
+          <a class="navbar-brand text-light" href="#"><img src="/img/logo2.png" alt="Logo supermercado" id="logo" class="m-1"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -51,7 +51,7 @@
                 <a class="nav-link text-light" href="/pages/error404.html">Acerca de</a>
               </li>
             </ul>
-            <form class="d-flex mx-lg-auto">
+            <form class="d-flex mb-1">
               <input
                 class="form-control me-2"
                 type="search"
@@ -140,7 +140,7 @@
             </div>
           </div>
           <button
-            class="btn btn-outline-light ms-5 me-lg-5"
+            class="btn btn-outline-light  me-lg-3"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
@@ -150,10 +150,147 @@
           </button>
         </div>
       </nav>
+      <nav class="navbar navbar-expand-lg navbar-light colorNav d-flex d-sm-none">
+        <div class="container-fluid">
+          <a class="navbar-brand text-light" href="#"><img src="/img/logo2.png" alt="Logo supermercado" id="logo" class="m-1"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="/pages/error404.html"
+                  >
+                  Sucursales
+                  </a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/pages/error404.html">Acerca de</a>
+              </li>
+            <li class="nav-item">
+            <form class="d-flex mb-1">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="search"
+              />
+              <button
+                class="btn btn-outline-success btn-outline-light"
+                type="submit"
+              >
+                Search
+              </button>
+            </form>
+          </li>
+          <li class="nav-item">
+          <div>
+            <button
+              type="button"
+              class="btn btn-outline-light text-white"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              data-bs-whatever="@mdo"
+              id="btnIdentificar"
+            >
+              Identificarse
+            </button>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Identificarse
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="row input-group mb-3">
+                        <input
+                          type="text"
+                          placeholder="Ingrese su correo electronico"
+                          id="txtCorreo"
+                          id="email"
+                          class="border border-secondary p-1 mb-2"
+                        />
+                        <input
+                          type="password"
+                          placeholder="Ingrese su contraseña"
+                          id="txtContraseña"
+                          class="border border-secondary p-1 mb-2"
+                        />
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          cerrar
+                        </button>
+                        <button
+                          type="button"
+                          value="ingresar"
+                          id="btnIngresar"
+                          class="btn btn-outline-secondary"
+                        >
+                        Ingresar
+                      </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </li>
+          <li class="nav-item">
+          <button
+            class="btn btn-outline-light mt-1 me-lg-3"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
+            <i class="bi bi-cart4"></i>
+          </button>
+          </li>
+        </ul>
+
+        </div>
+      </div>
+
+      </nav>
     </header>
     <main class="d-flex align-items-start">
       <section
-        class="nav flex-column nav-pills col-2"
+        class="nav flex-column nav-pills col-2 d-none d-sm-flex"
         id="v-pills-tab"
         role="tablist"
         aria-orientation="vertical"
@@ -280,7 +417,7 @@
             <hr />
           </div>
           <div
-            class="row justify-content-around d-flex flex-wrap justify-content-center align-items-center"
+            class="row d-inline-block d-sm-flex justify-content-around d-flex flex-wrap justify-content-center align-items-center"
             id="grillaTodos"
           ></div>
         </div>

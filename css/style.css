@@ -82,3 +82,8 @@ main .row {
     width: 96%;
   }
 }
+#logo{
+  border: none;
+  border-radius: 50%;
+  width: 35%;
+  }
