@@ -6,6 +6,7 @@ export class Producto {
         this.imagen = imagen;
         this.stock = stock;
         this.categoria = categoria;
+        this.precioTotal = 1;
         this.cantidad = 1;
     }
 }
