@@ -1,14 +1,14 @@
-document.addEventListener("keyup", e=>{
- 
-   if(e.target.matches('#buscador')){
+document.addEventListener("keyup",e=>{
+    if(e.target.matches("#buscador")){
+       console.log(e.target.value)
    
-    if(e.key === 'Escape')e.target.value = ''
+   
 
-       document.querySelectorAll('.articulo').forEach(fruta =>{
+       document.querySelectorAll(".articulo").forEach(fruta =>{
 
-           fruta.textContent.toLowerCase().includes(e.target.value.toLoLowerCase())?fruta.classList.remove('filtro')
-           :fruta.classList.add('filtro')
+           fruta.textContent.toLowerCase().includes(e.target.value.toLoLowerCase())?fruta.classList.remove("filtro")
+           :fruta.classList.add("filtro")
        })
    }
 })
-// a cada producto agregarle el id a cada producto
+// a cada producto agregarle el la class articulo
