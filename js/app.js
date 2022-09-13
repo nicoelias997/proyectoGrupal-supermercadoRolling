@@ -204,9 +204,17 @@ function maquetadoProducto(producto) {
   }
 }
 
-/* <a href="/pages/detalle.html" class="d-flex justify-content-center mt-2 link-danger" onclick="verDetalle('${producto.codigo}') id="linkVerMas">
-<i class="bi bi-info-square-fill"></i>
-</a> */
+maquetadoCarrito()
+function maquetadoCarrito() {
+  listaCarrito = JSON.parse(localStorage.getItem("listaCarritoKey")) || [];
+  if (listaCarrito.length > 0) {
+    //Si es true maqueta las cards
+    carritoContainer.innerHTML = ``
+    listaCarrito.map((producto) => {
+      maquetadoProdCarrito(producto);
+    });
+  }
+}
 
 //Funcion para agregar producto a la lista del carrito
 function agregarAlCarro(productoCarro) {
@@ -216,45 +224,82 @@ function agregarAlCarro(productoCarro) {
   let productoAgregado = listaProductos.find(
     (producto) => producto.codigo === productoCarro
   );
-
   //Busca al producto en el local storage
   let produtoEstaEnCarrito = listaCarrito.findIndex(
     (producto) => producto.codigo === productoCarro
   );
-
   //Si el producto no se encuentra en la lista lo agrega
   if (produtoEstaEnCarrito === -1) {
+    productoAgregado.cantidad = 1;
+    productoAgregado.precioTotal = productoAgregado.cantidad * productoAgregado.precio;
     listaCarrito.push(productoAgregado);
     guardarCarritoEnLocalStorage();
   }
 }
-if (listaCarrito.length > 0) {
-  //Si es true maqueta las cards
-  listaCarrito.map((producto) => {
-    maquetadoCarrito(producto);
-  });
+
+function guardarCarritoEnLocalStorage() {
+  localStorage.setItem("listaCarritoKey", JSON.stringify(listaCarrito));
+}
+function guardarProductosEnLocalStorage() {
+  localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
 }
 
-function maquetadoCarrito(producto) {
+function maquetadoProdCarrito(producto) {
   carritoContainer.innerHTML += `<article class="d-flex">
         <div class="w-25 me-4">
           <img class="w-100" src="${producto.imagen}" alt="${producto.nombre}">
         </div>
-        <div>
-          <h5 class="h4 mb-0">${producto.nombre}</h5>
-          <p class="ms-1 mb-0">$${producto.precio}</p>
+        <div class="w-50">
+          <h5 class="h3 fw-bolder mb-0">${producto.nombre}</h5>
           <div class="d-flex align-items-center ms-1 ">
-            <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-left"></i></button>
-            <p class="fs-5 mb-0 mx-1"></p>
-            <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-right"></i></i></button>
+          <p class=" fs-4 mb-0 me-1">Cantidad:</p>
+            <button type="button" class="btn btn-danger p-0 px-1 border-0" onclick='restarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-left"></i></button>
+            <p class="mb-0 mx-1 border border-1 px-3">${producto.cantidad}</p>
+            <button type="button" class="btn btn-danger p-0 px-1 border-0" onclick='sumarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-right"></i></i></button>
           </div>
+          <p class="fs-4 ms-1 mb-0">$${producto.precioTotal}</p>
+        </div>
+        <div class="w-25">
+        <button type="button" class="btn btn-danger ms-5" onclick='borrarDeCarrito("${producto.codigo}")'><i class="bi bi-x-square"></i>
         </div>
       </article>
       <hr>`;
 }
 
-function guardarCarritoEnLocalStorage() {
-  localStorage.setItem("listaCarritoKey", JSON.stringify(listaCarrito));
+function restarCantCarrito(codigoBuscado) {
+  let productoBuscado = listaCarrito.find(
+    (producto) => producto.codigo === codigoBuscado
+  );
+  if (productoBuscado.cantidad>1) {
+    productoBuscado.cantidad--;   
+    productoBuscado.precioTotal = productoBuscado.cantidad * productoBuscado.precio;
+    guardarCarritoEnLocalStorage();
+  }
+
+  maquetadoCarrito();  
+}
+
+function sumarCantCarrito(codigoBuscado) {
+  let productoBuscado = listaCarrito.find(
+    (producto) => producto.codigo === codigoBuscado
+  );
+  productoBuscado.cantidad++;
+  productoBuscado.precioTotal = productoBuscado.cantidad * productoBuscado.precio;
+  guardarCarritoEnLocalStorage();
+
+  maquetadoCarrito();  
+}
+
+function borrarDeCarrito(codigo) {
+  let copiaListaCarrito = listaCarrito.filter(
+    (producto) => producto.codigo != codigo
+  );
+  listaCarrito = copiaListaCarrito;
+  //Actualizar el localstorage
+  guardarCarritoEnLocalStorage();
+  //Actualizar la tabla
+  carritoContainer.innerHTML = "";
+  maquetadoCarrito();  
 }
 
 function verDetalle(codigo) {
