@@ -1,23 +1,3 @@
-
-// import { validarEmail } from "./validaciones";
-
-// const email = document.getElementById("email").value
-// const btnIdentificarse = document.getElementById("btn-identificarse");
-// btnIdentificarse.addEventListener("click", (() => {identificarse}))
-
-// const identificarse = () => {
-//     if(validarEmail(email)){
-//         Swal.fire('Any fool can use a computer')
-//     } else {
-//         Swal.fire({
-//             icon: 'error',
-//             title: 'Oops...',
-//             text: 'Something went wrong!',
-//             footer: '<a href="">Why do I have this issue?</a>'
-//           })
-//     }
-
-//Comprueba si el localStorage tiene datos
 let listaProductos =
   JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 
@@ -50,8 +30,8 @@ function maquetadoProducto(producto) {
 
   //Maqueta todos los productos de la lista
   grillaTodos.innerHTML += `
-  <article class="card m-2 p-1" style="width: 15rem;">
-  <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+  <article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+  <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
   <div class="card-body">
     <ul class="list-group list-group-flush">
       <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
@@ -67,146 +47,142 @@ function maquetadoProducto(producto) {
   switch (categoria) {
     case "Almacen":
       {
-        grillaAlmacen.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-  <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">${producto.nombre}</li>
-      <li class="list-group-item">${producto.cantidad}</li>
-      <li class="list-group-item">$ ${producto.precio}</li>
-    </ul>
-    <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
-      Agregar
-    </button>
-  </div>
-</article>`;
+        grillaAlmacen.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+        </div>
+      </article>`;
       }
       break;
     case "Bebidas":
       {
-        grillaBebidas.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        grillaBebidas.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
     case "Frutas y Verduras":
       {
-        grillaFrutasVerduras.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        grillaFrutasVerduras.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
     case "Congelados":
       {
-        grillaCongelados.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        grillaCongelados.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
     case "Panaderia":
       {
-        grillaPanaderia.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        grillaPanaderia.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
     case "Limpieza":
       {
-        grillaLimpieza.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        grillaLimpieza.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
     case "Cuidado Personal":
       {
-        grillaCuidadoPersonal.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        grillaCuidadoPersonal.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
     case "Mascotas":
       {
-        grillaMascotas.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        grillaMascotas.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        <img src="${producto.imagen}" class="card-img-top d-none d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
   }
 }
-
-/* <a href="/pages/detalle.html" class="d-flex justify-content-center mt-2 link-danger" onclick="verDetalle('${producto.codigo}') id="linkVerMas">
-<i class="bi bi-info-square-fill"></i>
-</a> */
 
 let listaProductosCarrito = [];
 
