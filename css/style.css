@@ -8,4 +8,11 @@
 }
 .filtro{
     display: none;
+};
+
+/* form */
+.mail{
+ border-radius: 6px solid  red;
+background: rgb(189, 180, 180);
+
 }
