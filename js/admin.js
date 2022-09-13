@@ -8,7 +8,7 @@ let listaProductos = []
 let codigo = document.querySelector("#codigo");
 let nombre = document.querySelector("#nombreProd");
 let descripcion = document.querySelector("#descripcion");
-let cantida = document.querySelector("#cantidad");
+let cantidad = document.querySelector("#cantidad");
 let imagen = document.querySelector("#imagen");
 let genero = document.querySelector("#genero");
 
@@ -90,8 +90,9 @@ function crearLista(producto){
         <i class="bi bi-x-square"></i>
       </button>
     </td>
-  </tr>`
-    console.log(tablaProductos)
+  </tr>`;
+  console.log(tablaProductos);
+  limpiarFormulario()
 }
 
 function guardarProductosEnLocalStorage(){

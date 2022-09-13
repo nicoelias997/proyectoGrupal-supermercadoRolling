@@ -5,6 +5,14 @@
   margin: 0;
 }
 
+#linkAdmin{
+    text-decoration: none;
+}
+
+.linkVerMas{
+    text-decoration: none;
+    background-color: red;
+}
 #linkAdmin {
   text-decoration: none;
 }
