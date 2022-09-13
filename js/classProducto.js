@@ -1,10 +1,11 @@
 export class Producto {
-    constructor(codigo, nombre, descripcion, imagen, tamanio, genero){
+    constructor(codigo, nombre, descripcion, imagen, stock, categoria){
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
-        this.tamanio = tamanio;
-        this.genero = genero;
+        this.stock = stock;
+        this.categoria = categoria;
+        this.cantidad = 1;
     }
 }
