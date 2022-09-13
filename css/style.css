@@ -1,6 +1,6 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 #linkAdmin{
@@ -10,4 +10,36 @@
 .linkVerMas{
     text-decoration: none;
     background-color: red;
+}
+#linkAdmin {
+  text-decoration: none;
+}
+
+/* Modificacion para eliminar el overflow que tenia la parte donde se muestran los productos en el index */
+main .row {
+  --bs-gutter-x: 0;
+}
+/* Fondo gris para el elemento seleccionado de la lista de categorias  */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #f2f2f2;
+}
+/* Ancho de cada columna del footer */
+.footerCol {
+  width: 30%;
+}
+
+/* Responsive para tablets */
+@media screen and (min-width: 769px) and (max-width: 993px) {
+  /* Ancho de cada columna del footer */
+  .footerCol {
+    width: 48%;
+  }
+}
+/* Responsive para celulares */
+@media all and (max-width: 768px) {
+  /* Ancho de cada columna del footer */
+  .footerCol {
+    width: 96%;
+  }
 }
