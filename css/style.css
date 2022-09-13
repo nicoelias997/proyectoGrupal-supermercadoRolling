@@ -1,63 +1,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Dosis&family=Inconsolata&family=Montserrat&family=Oswald:wght@400;500&family=Russo+One&family=Satisfy&display=swap");
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
-#linkAdmin{
-    text-decoration: none;
-}
-
-.linkVerMas{
-    text-decoration: none;
-    background-color: red;
-}
-#linkAdmin {
-  text-decoration: none;
-}
-.filtro {
-  display: none;
-}
-
-/* form */
-.mail {
-  border-radius: 6px solid red;
-  background: rgb(189, 180, 180);
-}
-
-.cardBtn {
-  background-color: #074f55;
-}
-.body {
-  background-color: #d6e0e1;
-}
-.colorNav {
-  background-color: #3a6a6f;
-}
+*{
+    margin: 0px;
+    padding: 0px ;
+    }
+    
+    .cardBtn{
+        background-color: #074f55 ;
+    }
+    .body{
+        background-color: #d6e0e1 ;
+    }
+    .colorNav{
+        background-color: #3a6a6f ;
+    
+    }
 /* Imagenes */
 .filtro {
   border-radius: 15px;
   box-shadow: 10px 10px 10px #074f55;
-}
+  }
 
-#fondo {
-  background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: grid;
-}
+  #fondo {
+    background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:grid;
+  }
 
 /* Fuentes */
 
-body {
-  font-family: "Dosis", sans-serif;
+body{
+    font-family: 'Dosis', sans-serif;
 }
 
 /* card Nosotros */
 
-.NostrosCard {
+.NostrosCard{
   background-color: #074f55;
   color: #ffffff;
   box-shadow: 10px 10px 10px gray;
+  margin: 0.5rem;
+}
+
+/* Modificacion para eliminar el overflow que tenia la parte donde se muestran los productos en el index */
+main .row {
+  --bs-gutter-x: 0;
+}
+/* Fondo gris para el elemento seleccionado de la lista de categorias  */
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #f2f2f2;
+}
+/* Ancho de cada columna del footer */
+.footerCol {
+  width: 30%;
+}
+
+/* Responsive para tablets */
+@media screen and (min-width: 769px) and (max-width: 993px) {
+  /* Ancho de cada columna del footer */
+  .footerCol {
+    width: 48%;
+  }
+}
+/* Responsive para celulares */
+@media all and (max-width: 768px) {
+  /* Ancho de cada columna del footer */
+  .footerCol {
+    width: 96%;
+  }
 }
