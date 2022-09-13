@@ -75,7 +75,7 @@ function crearLista(producto){
     //esta funcion dibuja un tr
     let tablaProductos = document.querySelector('#tablaProductos');
     //creamos el tr con document.createElement o innerHTML del tbody
-    tablaProductos.innerHTML += `<tr>
+    tablaProductos.innerHTML += `<tr class="align-middle">
     <th scope="row">${producto.codigo}</th>
     <td>${producto.nombre}</td>
     <td>${producto.descripcion}</td>

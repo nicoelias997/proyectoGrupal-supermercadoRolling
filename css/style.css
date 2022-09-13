@@ -16,9 +16,20 @@
     
     }
 /* Imagenes */
-.filtro {
+.filtroCard {
   border-radius: 15px;
   box-shadow: 10px 10px 10px #074f55;
+  }
+
+  .filtro{
+    display: none;
+  };
+  
+  /* form */
+  .mail{
+  border-radius: 6px solid  red;
+  background: rgb(189, 180, 180);
+  
   }
 
   #fondo {

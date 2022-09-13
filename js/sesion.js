@@ -11,7 +11,6 @@ function obtenerListaUsuario() {
 }
 function validar(correo, contraseña) {
   let listaUsuario = obtenerListaUsuario();
-  console.log(listaUsuario);
   let accesso = false;
 
   for (let i = 0; i < listaUsuario.length; i++) {
@@ -44,6 +43,12 @@ function iniciarSession() {
   console.log(Bacesso);
   if (Bacesso == true) {
     ingresar();
+  } else {
+    alert(
+      `No estas identificado? Habla con nuestro operador..`
+    )
+    window.location.href = "index.html";
+    limpiarFormulario();     
   }
 }
 function ingresar() {
@@ -57,10 +62,7 @@ function ingresar() {
       limpiarFormulario();
 
       break;
-    default:
-      window.location.href = "index.html";
-      limpiarFormulario();
-      break;
+   
   }
 }
 
