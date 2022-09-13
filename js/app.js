@@ -1,4 +1,3 @@
-
 // import { validarEmail } from "./validaciones";
 
 // const email = document.getElementById("email").value
@@ -20,6 +19,7 @@
 //Comprueba si el localStorage tiene datos
 let listaProductos =
   JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+let listaCarrito = JSON.parse(localStorage.getItem("listaCarritoKey")) || [];
 
 let grillaTodos = document.getElementById("grillaTodos");
 let grillaAlmacen = document.getElementById("grillaAlmacen");
@@ -208,36 +208,58 @@ function maquetadoProducto(producto) {
 <i class="bi bi-info-square-fill"></i>
 </a> */
 
-let listaProductosCarrito = [];
-
-//Funcion para agregar producto al carrito
+//Funcion para agregar producto a la lista del carrito
 function agregarAlCarro(productoCarro) {
+  listaCarrito = JSON.parse(localStorage.getItem("listaCarritoKey")) || [];
+
+  //Trae el producto para agregar a la lista
   let productoAgregado = listaProductos.find(
     (producto) => producto.codigo === productoCarro
   );
-  //Comprueba que el producto no se encuentre en la lista del carrito para evitar maquetar 2 veces
-  if (!listaProductosCarrito.includes(productoAgregado)) {
-    listaProductosCarrito.push(productoAgregado);
-    carritoContainer.innerHTML += `<article class="d-flex">
-    <div class="w-25 me-4">
-      <img class="w-100" src="${productoAgregado.imagen}" alt="${productoAgregado.nombre}">
-    </div>
-    <div>
-      <h5 class="h4 mb-0">${productoAgregado.nombre}</h5>
-      <p class="ms-1 mb-0">$${productoAgregado.precio}</p>
-      <div class="d-flex align-items-center ms-1 ">
-        <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-left"></i></button>
-        <p class="fs-5 mb-0 mx-1">${productoAgregado.cantidad}</p>
-        <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-right"></i></i></button>
-      </div>
-    </div>
-  </article>
-  <hr>`;
+
+  //Busca al producto en el local storage
+  let produtoEstaEnCarrito = listaCarrito.findIndex(
+    (producto) => producto.codigo === productoCarro
+  );
+
+  //Si el producto no se encuentra en la lista lo agrega
+  if (produtoEstaEnCarrito === -1) {
+    listaCarrito.push(productoAgregado);
+    guardarCarritoEnLocalStorage();
   }
 }
+if (listaCarrito.length > 0) {
+  //Si es true maqueta las cards
+  listaCarrito.map((producto) => {
+    maquetadoCarrito(producto);
+  });
+}
 
-function verDetalle(codigo){
+function maquetadoCarrito(producto) {
+  carritoContainer.innerHTML += `<article class="d-flex">
+        <div class="w-25 me-4">
+          <img class="w-100" src="${producto.imagen}" alt="${producto.nombre}">
+        </div>
+        <div>
+          <h5 class="h4 mb-0">${producto.nombre}</h5>
+          <p class="ms-1 mb-0">$${producto.precio}</p>
+          <div class="d-flex align-items-center ms-1 ">
+            <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-left"></i></button>
+            <p class="fs-5 mb-0 mx-1"></p>
+            <button type="button" class="btn btn-danger p-0 px-1 border-0"><i class="bi bi-arrow-right"></i></i></button>
+          </div>
+        </div>
+      </article>
+      <hr>`;
+}
+
+function guardarCarritoEnLocalStorage() {
+  localStorage.setItem("listaCarritoKey", JSON.stringify(listaCarrito));
+}
+
+function verDetalle(codigo) {
   console.log(codigo);
-  console.log(window.location.origin+'/pages/detalle.html?codigo='+codigo);
-  window.location.href = window.location.origin+'/pages/detalle.html?codigo='+codigo
+  console.log(window.location.origin + "/pages/detalle.html?codigo=" + codigo);
+  window.location.href =
+    window.location.origin + "/pages/detalle.html?codigo=" + codigo;
 }
