@@ -2,7 +2,7 @@ function obtenerListaUsuario() {
   let listaUsuario = JSON.parse(localStorage.getItem("listaUsuarioLs"));
   if (listaUsuario == null) {
     listaUsuario =
-    [  ["1", "manu", " ibañez", "manuel@gmail.com","manuel", "071202", "1"],
+    [  ["1", "manu", " ibañez", "grupo@gmail.com","rolling", "071202", "1"],
       ["2", "martin", " astorga", "martin@gmail.com","martin", "071202", "2"]]
   }
 

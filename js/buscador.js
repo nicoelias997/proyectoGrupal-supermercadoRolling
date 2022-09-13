@@ -11,3 +11,4 @@ document.addEventListener("keyup", e=>{
        })
    }
 })
+// a cada producto agregarle el id a cada producto
