@@ -8,7 +8,7 @@
 }
 
 /* Modificacion para eliminar el overflow que tenia la parte donde se muestran los productos en el index */
-.row {
+main .row {
   --bs-gutter-x: 0;
 }
 /* Fondo gris para el elemento seleccionado de la lista de categorias  */
