@@ -28,11 +28,11 @@ seccionDetalle.innerHTML =`
                 <p class="card-text mt-2">${productoBuscado.descripcion}</p>
                 <p class="card-text mt-2">El precio de este producto es: $ ${productoBuscado.precio}/ud</p> 
                 <div class="d-flex text-center mt-2">               
-                <p class="card-text">Categoria: <span class="p-2 badge rounded-pill bg-danger">${productoBuscado.genero}</span></p>
+                <p class="card-text">Categoria: <span class="p-2 badge rounded-pill colorNav">${productoBuscado.genero.toUpperCase()}</span></p>
                 </div>
                
               </div>
-              <a href="/index.html" class=""><button type="button" class="btn btn-outline-danger border-rounded-4 fw-light">Seguir comprando...</button>
+              <a href="/index.html" class=""><button type="button" class="btn btn-outline-dark border-rounded-4 fw-light">Seguir comprando...</button>
             </div>
           </div>
           </div>

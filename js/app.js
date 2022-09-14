@@ -36,10 +36,10 @@ function maquetadoProducto(producto) {
       <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
       <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
     </ul>
-    <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+    <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
       Agregar
     </button>
-    <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+    <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
   </div>
 </article>`;
   //Maqueta los productos en sus respectivas categorias
