@@ -1,57 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat&family=Dosis&family=Inconsolata&family=Montserrat&family=Oswald:wght@400;500&family=Russo+One&family=Satisfy&display=swap");
 
-*{
-    margin: 0px;
-    padding: 0px ;
-    }
-    
-    .cardBtn{
-        background-color: #074f55 ;
-    }
-    .body{
-        background-color: #d6e0e1 ;
-    }
-    .colorNav{
-        background-color: #3a6a6f ;
-    
-    }
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.body {
+  font-family: "Dosis", sans-serif;
+  background-color: #d6e0e1;
+}
+
+/* form */
+.mail {
+  border-radius: 6px solid red;
+  background: rgb(189, 180, 180);
+}
+
+.cardBtn {
+  background-color: #074f55;
+}
+.colorNav {
+  background-color: #3a6a6f;
+}
 /* Imagenes */
 .filtroCard {
   border-radius: 15px;
   box-shadow: 10px 10px 10px #074f55;
-  }
-
-  .filtro{
-    display: none;
-  };
-  
-  /* form */
-  .mail{
-  border-radius: 6px solid  red;
-  background: rgb(189, 180, 180);
-  
-  }
-
-  #fondo {
-    background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display:grid;
-  }
-
-/* Fuentes */
-
-body{
-    font-family: 'Dosis', sans-serif;
 }
 
-/* card Nosotros */
-
-.NostrosCard{
-  background-color: #074f55;
-  color: #ffffff;
-  box-shadow: 10px 10px 10px gray;
-  margin: 0.5rem;
+.filtro {
+  display: none;
 }
 
 /* Modificacion para eliminar el overflow que tenia la parte donde se muestran los productos en el index */
@@ -63,6 +41,23 @@ main .row {
 .nav-pills .show > .nav-link {
   background-color: #f2f2f2;
 }
+
+/* Pagina  Acerca de nosotros*/
+#fondo {
+  background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+}
+
+/* card Nosotros */
+.NostrosCard {
+  background-color: #074f55;
+  color: #ffffff;
+  box-shadow: 10px 10px 10px gray;
+  margin: 0.5rem;
+}
+
 /* Ancho de cada columna del footer */
 .footerCol {
   width: 30%;
