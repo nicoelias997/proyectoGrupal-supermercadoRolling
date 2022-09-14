@@ -87,6 +87,9 @@ main .row {
   border-radius: 50%;
   width: 50%;
 }
+#grillaTodos{
+  padding: 0.1rem;
+}
 
 
 /* Responsive para tablets */

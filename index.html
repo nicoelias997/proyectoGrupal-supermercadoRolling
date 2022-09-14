@@ -68,10 +68,10 @@
               </button>
             </form>
           </div>
-          <div>
+          <div >
             <button
               type="button"
-              class="btn btn-outline-light text-white mt-1"
+              class="btn btn-outline-light text-white"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               data-bs-whatever="@mdo"
@@ -141,7 +141,7 @@
             </div>
           </div>
           <button
-            class="btn btn-outline-light ms-5 me-lg-3 navCarrito"
+            class="btn btn-outline-light ms-auto ms-md-5 me-lg-3"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
@@ -531,7 +531,15 @@
           aria-label="Close"
         ></button>
       </div>
-      <div id="carritoContainer" class="offcanvas-body"></div>
+      <div id="carritoContainer" class="offcanvas-body">
+      </div>
+      <div class="offcanvas-footer">
+        <div class="col-6 d-flex justify-content-between mb-4 ms-4">
+        <h2 id="total">$0</h2>
+        <button class="btn btn-dark" id="btnComprar">Comprar</button>
+      </div>
+
+      </div>
     </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script

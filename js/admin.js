@@ -80,7 +80,6 @@ function guardarProducto(e) {
       precio.value,
       categoria.value
     );
-
     listaProductos.push(nuevoProducto);
     guardarProductosEnLocalStorage();
     crearLista(nuevoProducto);
@@ -96,6 +95,13 @@ function guardarProducto(e) {
 
 function limpiarFormulario() {
   formProducto.reset();
+  validarNombre.className ="";
+  validarPrecio.className ="";
+  validarCategoria.className ="";
+  validarDescription.className ="";
+  validarStock.className ="";
+  validarImagen.className ="";
+
   // modificar las clases de bootstrap si es necesario
 }
 

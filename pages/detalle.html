@@ -22,13 +22,136 @@
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light colorNav">
-          <div class="container-fluid justify-content-center">
-            <a class="navbar-brand text-light" href="/index.html">
-              <img src="/img/logo2.png" class="m-2 justify-content-center" id="logo" alt="logo supermercado">
-            </a>
+      <nav class=" navbar navbar-expand-lg navbar-light colorNav d-flex d-sm-flex">
+        <div class="container-fluid ">
+          <a class="navbar-brand text-light" href="/index.html"><img src="/img/logo2.png" alt="Logo supermercado" id="logo" class="m-1"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light"
+                  aria-current="page"
+                  href="/pages/error404.html"
+                  >
+                  Lista de Deseos
+                  </a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="/pages/error404.html">Productos</a>
+              </li>
+            </ul>
+            <form class="d-flex mb-1">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="buscador"
+              />
+              <button
+                class="btn btn-outline-success btn-outline-light"
+                type="submit"
+              >
+                Buscador
+              </button>
+            </form>
           </div>
-        </nav>
+          <div>
+            <button
+              type="button"
+              class="btn btn-outline-light text-white mt-1"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              data-bs-whatever="@mdo"
+              id="btnIdentificar"
+            >
+              Identificarse
+            </button>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Identificarse
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="row input-group mb-3">
+                        <input
+                          type="text"
+                          placeholder="Ingrese su correo electronico"
+                          id="txtCorreo"
+                          id="email"
+                          class="border border-secondary p-1 mb-2"
+                        />
+                        <input
+                          type="password"
+                          placeholder="Ingrese su contraseña"
+                          id="txtContraseña"
+                          class="border border-secondary p-1 mb-2"
+                        />
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          cerrar
+                        </button>
+                        <button
+                          type="button"
+                          value="ingresar"
+                          id="btnIngresar"
+                          class="btn btn-outline-secondary "
+                        >
+                        Ingresar
+                      </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="btn btn-outline-light ms-5 me-lg-3 navCarrito"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+            onclick="maquetadoCarrito()"
+          >
+            <i class="bi bi-cart4"></i>
+          </button>
+        </div>
+       </nav>
       </header>
     <main class="container my-5">
       <h1 class="display-4 text-center">Detalle producto</h1>

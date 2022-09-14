@@ -30,7 +30,7 @@ function maquetadoProducto(producto) {
   let categoria = producto.categoria;
   //Maqueta todos los productos de la lista
   grillaTodos.innerHTML += `
-  <article class="card m-2 p-1 flex-nowrap " style="width: 12rem;">
+  <article class="card m-2 p-1 flex-nowrap articulo" style="width: 12rem;">
   <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
   <div class="card-body">
     <ul class="list-group list-group-flush">
@@ -47,7 +47,7 @@ function maquetadoProducto(producto) {
   switch (categoria) {
     case "Almacen":
       {
-        grillaAlmacen.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
+        grillaAlmacen.innerHTML += `<article class=" articulo card m-2 p-1" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -64,7 +64,7 @@ function maquetadoProducto(producto) {
       break;
     case "Bebidas":
       {
-        grillaBebidas.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        grillaBebidas.innerHTML += `<article class="articulo card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -81,7 +81,7 @@ function maquetadoProducto(producto) {
       break;
     case "Frutas y Verduras":
       {
-        grillaFrutasVerduras.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        grillaFrutasVerduras.innerHTML += `<article class="articulo card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -98,7 +98,7 @@ function maquetadoProducto(producto) {
       break;
     case "Congelados":
       {
-        grillaCongelados.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        grillaCongelados.innerHTML += `<article class="card articulo m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -115,7 +115,7 @@ function maquetadoProducto(producto) {
       break;
     case "Panaderia":
       {
-        grillaPanaderia.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        grillaPanaderia.innerHTML += `<article class="articulo card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -132,7 +132,7 @@ function maquetadoProducto(producto) {
       break;
     case "Limpieza":
       {
-        grillaLimpieza.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        grillaLimpieza.innerHTML += `<article class="articulo card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -149,7 +149,7 @@ function maquetadoProducto(producto) {
       break;
     case "Cuidado Personal":
       {
-        grillaCuidadoPersonal.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        grillaCuidadoPersonal.innerHTML += `<article class="articulo card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -166,7 +166,7 @@ function maquetadoProducto(producto) {
       break;
     case "Mascotas":
       {
-        grillaMascotas.innerHTML += `<article class="card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
+        grillaMascotas.innerHTML += `<article class="articulo card m-2 p-1 d-inline-block d-sm-flex flex-nowrap" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top   d-sm-flex" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
@@ -234,14 +234,14 @@ function maquetadoProdCarrito(producto) {
           <h5 class="h3 fw-bolder mb-0">${producto.nombre}</h5>
           <div class="d-flex align-items-center ms-1 ">
           <p class=" fs-4 mb-0 me-1">Stock:</p>
-            <button type="button" class="btn btn-danger p-0 px-1 border-0" onclick='restarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-left"></i></button>
+            <button type="button" class="btn btn-outline-dark p-0 px-1 border-0" onclick='restarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-left"></i></button>
             <p class="mb-0 mx-1 border border-1 px-3">${producto.stock}</p>
-            <button type="button" class="btn btn-danger p-0 px-1 border-0" onclick='sumarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-right"></i></i></button>
+            <button type="button" class="btn btn-outline-dark p-0 px-1 border-0" onclick='sumarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-right"></i></i></button>
           </div>
           <p class="fs-4 ms-1 mb-0">$${producto.precioTotal}</p>
         </div>
         <div class="w-25">
-        <button type="button" class="btn btn-danger ms-5" onclick='borrarDeCarrito("${producto.codigo}")'><i class="bi bi-x-square"></i>
+        <button type="button" class="btn ms-5" onclick='borrarDeCarrito("${producto.codigo}")'><i class="bi bi-x-square"></i>
         </div>
       </article>
       <hr>`;
@@ -285,15 +285,31 @@ function borrarDeCarrito(codigo) {
   maquetadoCarrito();
 }
 
+const total = document.getElementById("total")
+const btnComprar = document.getElementById("btnComprar")
+btnComprar.addEventListener("click", comprarDeCarrito)
 
-function comprarDeCarrito(codigo){
-  let copiaListaCarrito = listaCarrito.filter(
-    (producto) => producto.codigo == codigo);
-    copiaListaCarrito = listaCarrito;
-    guardarCarritoEnLocalStorage()
-    carritoContainer.innerHTML = "";
-    maquetadoCarrito()
-}
+// function
+
+
+// function comprarDeCarrito(){
+//   listaCarrito = JSON.parse(localStorage.getItem("listaCarritoKey")) || [];
+  
+//   let copiaLista = listaCarrito.filter(
+//     producto => producto) 
+//     console.log(copiaLista)
+//   let totales = 0;
+//   for(let i = 0; i < copiaLista.length; i++){
+//     totales += copiaLista.precioTotal
+//     console.log(totales)
+//     total.innerHTML += totales
+//   }
+//   console.log(totales)
+
+//   carritoContainer.innerHTML = "";
+//   guardarCarritoEnLocalStorage()
+
+// }
 
 function verDetalle(codigo) {
   window.location.href =
