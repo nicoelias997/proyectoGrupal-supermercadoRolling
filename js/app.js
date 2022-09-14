@@ -210,9 +210,9 @@ function agregarAlCarro(productoCarro) {
   );
   //Si el producto no se encuentra en la lista lo agrega
   if (produtoEstaEnCarrito === -1) {
-    productoAgregado.cantidad = 1;
+    productoAgregado.stock = 1;
     productoAgregado.precioTotal =
-      productoAgregado.cantidad * productoAgregado.precio;
+      productoAgregado.stock * productoAgregado.precio;
     listaCarrito.push(productoAgregado);
     guardarCarritoEnLocalStorage();
   }
@@ -233,9 +233,9 @@ function maquetadoProdCarrito(producto) {
         <div class="w-50">
           <h5 class="h3 fw-bolder mb-0">${producto.nombre}</h5>
           <div class="d-flex align-items-center ms-1 ">
-          <p class=" fs-4 mb-0 me-1">Cantidad:</p>
+          <p class=" fs-4 mb-0 me-1">Stock:</p>
             <button type="button" class="btn btn-danger p-0 px-1 border-0" onclick='restarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-left"></i></button>
-            <p class="mb-0 mx-1 border border-1 px-3">${producto.cantidad}</p>
+            <p class="mb-0 mx-1 border border-1 px-3">${producto.stock}</p>
             <button type="button" class="btn btn-danger p-0 px-1 border-0" onclick='sumarCantCarrito("${producto.codigo}")'><i class="bi bi-arrow-right"></i></i></button>
           </div>
           <p class="fs-4 ms-1 mb-0">$${producto.precioTotal}</p>
@@ -251,10 +251,10 @@ function restarCantCarrito(codigoBuscado) {
   let productoBuscado = listaCarrito.find(
     (producto) => producto.codigo === codigoBuscado
   );
-  if (productoBuscado.cantidad > 1) {
-    productoBuscado.cantidad--;
+  if (productoBuscado.stock > 1) {
+    productoBuscado.stock--;
     productoBuscado.precioTotal =
-      productoBuscado.cantidad * productoBuscado.precio;
+      productoBuscado.stock * productoBuscado.precio;
     guardarCarritoEnLocalStorage();
   }
 
@@ -265,9 +265,9 @@ function sumarCantCarrito(codigoBuscado) {
   let productoBuscado = listaCarrito.find(
     (producto) => producto.codigo === codigoBuscado
   );
-  productoBuscado.cantidad++;
+  productoBuscado.stock++;
   productoBuscado.precioTotal =
-    productoBuscado.cantidad * productoBuscado.precio;
+    productoBuscado.stock * productoBuscado.precio;
   guardarCarritoEnLocalStorage();
 
   maquetadoCarrito();
@@ -283,6 +283,16 @@ function borrarDeCarrito(codigo) {
   //Actualizar la tabla
   carritoContainer.innerHTML = "";
   maquetadoCarrito();
+}
+
+
+function comprarDeCarrito(codigo){
+  let copiaListaCarrito = listaCarrito.filter(
+    (producto) => producto.codigo == codigo);
+    copiaListaCarrito = listaCarrito;
+    guardarCarritoEnLocalStorage()
+    carritoContainer.innerHTML = "";
+    maquetadoCarrito()
 }
 
 function verDetalle(codigo) {

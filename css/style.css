@@ -82,6 +82,12 @@ main .row {
 .footerCol {
   width: 30%;
 }
+#logo {
+  border: none;
+  border-radius: 50%;
+  width: 50%;
+}
+
 
 /* Responsive para tablets */
 @media screen and (min-width: 769px) and (max-width: 993px) {
@@ -98,8 +104,21 @@ main .row {
     width: 96%;
   }
 }
-#logo {
-  border: none;
-  border-radius: 50%;
-  width: 50%;
+
+@media all and (max-width: 500px){
+
+  .navCarrito{
+    margin-top: 10px;
+    position: relative;
+    left: -25px;
+    top: -5px;
+  }
+}
+
+@media all and (max-width: 272px){
+
+  .navCarrito{
+    position: relative;
+    left: -3rem;
+  }
 }

@@ -36,7 +36,7 @@ seccionDetalle.innerHTML = `
                   productoBuscado.precio
                 }/ud</p> 
                 <div class="d-flex text-center mt-2">               
-                <p class="card-text">Categoria: <span class="p-2 badge rounded-pill colorNav">${productoBuscado.genero.toUpperCase()}</span></p>
+                <p class="card-text">Categoria: <span class="p-2 badge rounded-pill colorNav">${productoBuscado.categoria.toUpperCase()}</span></p>
                 </div>
                
               </div>
