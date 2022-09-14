@@ -47,7 +47,6 @@ if (listaProductos.length > 0) {
 //Funcion para maquetar el producto que se encuentre en el localStorage en su respectiva seccion
 function maquetadoProducto(producto) {
   let categoria = producto.categoria;
-  console.log(categoria);
   //Maqueta todos los productos de la lista
   grillaTodos.innerHTML += `
   <article class="card m-2 p-1" style="width: 15rem;">
@@ -152,7 +151,6 @@ function maquetadoProducto(producto) {
       break;
     case "Limpieza":
       {
-        console.log(producto);
         grillaLimpieza.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
@@ -205,12 +203,12 @@ function maquetadoProducto(producto) {
   }
 }
 
-maquetadoCarrito()
+maquetadoCarrito();
 function maquetadoCarrito() {
   listaCarrito = JSON.parse(localStorage.getItem("listaCarritoKey")) || [];
   if (listaCarrito.length > 0) {
     //Si es true maqueta las cards
-    carritoContainer.innerHTML = ``
+    carritoContainer.innerHTML = ``;
     listaCarrito.map((producto) => {
       maquetadoProdCarrito(producto);
     });
@@ -232,7 +230,8 @@ function agregarAlCarro(productoCarro) {
   //Si el producto no se encuentra en la lista lo agrega
   if (produtoEstaEnCarrito === -1) {
     productoAgregado.cantidad = 1;
-    productoAgregado.precioTotal = productoAgregado.cantidad * productoAgregado.precio;
+    productoAgregado.precioTotal =
+      productoAgregado.cantidad * productoAgregado.precio;
     listaCarrito.push(productoAgregado);
     guardarCarritoEnLocalStorage();
   }
@@ -271,13 +270,14 @@ function restarCantCarrito(codigoBuscado) {
   let productoBuscado = listaCarrito.find(
     (producto) => producto.codigo === codigoBuscado
   );
-  if (productoBuscado.cantidad>1) {
-    productoBuscado.cantidad--;   
-    productoBuscado.precioTotal = productoBuscado.cantidad * productoBuscado.precio;
+  if (productoBuscado.cantidad > 1) {
+    productoBuscado.cantidad--;
+    productoBuscado.precioTotal =
+      productoBuscado.cantidad * productoBuscado.precio;
     guardarCarritoEnLocalStorage();
   }
 
-  maquetadoCarrito();  
+  maquetadoCarrito();
 }
 
 function sumarCantCarrito(codigoBuscado) {
@@ -285,10 +285,11 @@ function sumarCantCarrito(codigoBuscado) {
     (producto) => producto.codigo === codigoBuscado
   );
   productoBuscado.cantidad++;
-  productoBuscado.precioTotal = productoBuscado.cantidad * productoBuscado.precio;
+  productoBuscado.precioTotal =
+    productoBuscado.cantidad * productoBuscado.precio;
   guardarCarritoEnLocalStorage();
 
-  maquetadoCarrito();  
+  maquetadoCarrito();
 }
 
 function borrarDeCarrito(codigo) {
@@ -300,12 +301,10 @@ function borrarDeCarrito(codigo) {
   guardarCarritoEnLocalStorage();
   //Actualizar la tabla
   carritoContainer.innerHTML = "";
-  maquetadoCarrito();  
+  maquetadoCarrito();
 }
 
 function verDetalle(codigo) {
-  console.log(codigo);
-  console.log(window.location.origin + "/pages/detalle.html?codigo=" + codigo);
   window.location.href =
     window.location.origin + "/pages/detalle.html?codigo=" + codigo;
 }
