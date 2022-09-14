@@ -95,13 +95,12 @@ function guardarProducto(e) {
 
 function limpiarFormulario() {
   formProducto.reset();
-  validarNombre.className ="";
-  validarPrecio.className ="";
-  validarCategoria.className ="";
-  validarDescription.className ="";
-  validarStock.className ="";
-  validarImagen.className ="";
-
+  nombre.className = "form-control"
+  descripcion.className = "form-control"
+  imagen.className = "form-control"
+  precio.className = "form-control"
+  stock.className = "form-control"
+  categoria.className = "form-control"
   // modificar las clases de bootstrap si es necesario
 }
 
