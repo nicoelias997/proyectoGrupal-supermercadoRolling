@@ -15,8 +15,6 @@ function validar(correo, contraseña) {
 
   for (let i = 0; i < listaUsuario.length; i++) {
     if (correo == listaUsuario[i][3] && contraseña == listaUsuario[i][4]) {
-      console.log(contraseña);
-      console.log(correo);
       accesso = true;
       sessionStorage.setItem(
         "usuarioActivo",
@@ -40,15 +38,13 @@ function iniciarSession() {
   contraseñaIngresada = document.querySelector("#txtContraseña").value;
 
   Bacesso = validar(correoIngresado, contraseñaIngresada);
-  console.log(Bacesso);
+
   if (Bacesso == true) {
     ingresar();
   } else {
-    alert(
-      `No estas identificado? Habla con nuestro operador..`
-    )
+    alert(`No estas identificado? Habla con nuestro operador..`);
     window.location.href = "index.html";
-    limpiarFormulario();     
+    limpiarFormulario();
   }
 }
 function ingresar() {
@@ -62,14 +58,12 @@ function ingresar() {
       limpiarFormulario();
 
       break;
-   
   }
 }
 
 function limpiarFormulario() {
   formularioDeIngreso.reset();
 }
-
 
 // let formulario = document.getElementById("formGeneraciones");
 // edad.addEventListener("blur", ()=>{validarEmail(gmail)})

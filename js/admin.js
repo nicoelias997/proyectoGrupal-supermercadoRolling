@@ -67,7 +67,8 @@ function guardarProducto(e) {
     validarImagen(imagen) &&
     validarCantidad(cantidad) &&
     validarPrecio(precio) &&
-    validarGenero(genero) && productoNuevo
+    validarGenero(genero) &&
+    productoNuevo
   ) {
     //si los datos son correctos
     let nuevoProducto = new Producto(
@@ -80,13 +81,12 @@ function guardarProducto(e) {
       genero.value
     );
 
-    console.log(nuevoProducto);
     listaProductos.push(nuevoProducto);
     guardarProductosEnLocalStorage();
     crearLista(nuevoProducto);
     //limpiar formulario
     limpiarFormulario();
-    console.log(listaProductos);
+
     //cerrar la ventana modal
     modalAdminProducto.hide();
   } else {
@@ -129,7 +129,6 @@ function crearLista(producto) {
       </button>
     </td>
   </tr>`;
-  console.log(tablaProductos);
 }
 
 function guardarProductosEnLocalStorage() {
@@ -149,7 +148,6 @@ window.borrarProducto = function (codigo) {
     confirmButtonText: "Borrar",
     cancelButtonText: "Cancelar",
   }).then((result) => {
-    console.log(result);
     if (result.isConfirmed) {
       //Buscar el producto en el arreglo y borrarlo
       let copiaListaProductos = listaProductos.filter(
