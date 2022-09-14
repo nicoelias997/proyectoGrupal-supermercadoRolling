@@ -4,10 +4,10 @@ document.addEventListener("keyup",e=>{
    
    
 
-       document.querySelectorAll(".articulo").forEach(fruta =>{
+       document.querySelectorAll(".articulo").forEach(producto =>{
 
-           fruta.textContent.toLowerCase().includes(e.target.value.toLoLowerCase())?fruta.classList.remove("filtro")
-           :fruta.classList.add("filtro")
+           producto.textContent.toLowerCase().includes(e.target.value)?producto.classList.remove("filtro")
+           :producto.classList.add("filtro")
        })
    }
 })
