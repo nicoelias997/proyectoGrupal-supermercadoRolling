@@ -250,7 +250,7 @@ function maquetadoProdCarrito(producto) {
         </div>
       </article>
       <hr>`;
-  total.innerHTML = `${precioTotalCompra}`;
+  total.innerHTML = `${precioTotalCompra + precio}`;
 }
 
 function restarCantCarrito(codigoBuscado) {
