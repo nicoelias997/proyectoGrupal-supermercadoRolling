@@ -44,24 +44,22 @@ export function validarDescription(descripcion) {
   }
 }
 
-export function validarGenero(genero) {
-  if (genero.value !== "") {
-    genero.className = "form-control is-valid";
+export function validarCategoria(categoria) {
+  if (categoria.value !== "") {
+    categoria.className = "form-control is-valid";
     return true;
   } else {
-    genero.className = "form-control is-invalid";
+    categoria.className = "form-control is-invalid";
     return false;
   }
 }
 
-export function validarCantidad(cantidad) {
-  if (isNaN(cantidad)) {
-    cantidad.className = "form-control is-valid";
-
+export function validarStock(stock) {
+  if (isNaN(stock)) {
+    stock.className = "form-control is-valid";
     return true;
   } else {
-    cantidad.className = "form-control is-invalid";
-
+    stock.className = "form-control is-invalid";
     return false;
   }
 }

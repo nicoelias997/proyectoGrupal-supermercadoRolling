@@ -61,6 +61,23 @@ main .row {
 .nav-pills .show > .nav-link {
   background-color: #f2f2f2;
 }
+
+/* Pagina  Acerca de nosotros*/
+#fondo {
+  background-image: url(../img/6140519801883f32249f934232a9136e.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+}
+
+/* card Nosotros */
+.NostrosCard {
+  background-color: #074f55;
+  color: #ffffff;
+  box-shadow: 10px 10px 10px gray;
+  margin: 0.5rem;
+}
+
 /* Ancho de cada columna del footer */
 .footerCol {
   width: 30%;

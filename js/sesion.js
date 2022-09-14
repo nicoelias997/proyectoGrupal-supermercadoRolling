@@ -38,7 +38,6 @@ function iniciarSession() {
   contraseñaIngresada = document.querySelector("#txtContraseña").value;
 
   Bacesso = validar(correoIngresado, contraseñaIngresada);
-
   if (Bacesso == true) {
     ingresar();
   } else {
