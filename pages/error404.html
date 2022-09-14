@@ -16,12 +16,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="../css/style.css">
-    <title>Document</title>
+    <title>Error 404</title>
   </head>
   <body>
     <header>
       <nav class=" navbar navbar-expand-lg navbar-light colorNav d-flex d-sm-flex">
-        <div class="container-fluid">
+        <div class="container-fluid ">
           <a class="navbar-brand text-light" href="/index.html"><img src="/img/logo2.png" alt="Logo supermercado" id="logo" class="m-1"></a>
           <button
             class="navbar-toggler"
@@ -52,11 +52,11 @@
             </ul>
             <form class="d-flex mb-1">
               <input
-                class="form-control me-2 buscador"
-                type="buscadorx "
-                placeholder="Buscador"
-                aria-label="Buscador"
-                
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                id="buscador"
               />
               <button
                 class="btn btn-outline-success btn-outline-light"
@@ -69,7 +69,7 @@
           <div>
             <button
               type="button"
-              class="btn btn-outline-light text-white"
+              class="btn btn-outline-light text-white mt-1"
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               data-bs-whatever="@mdo"
@@ -139,11 +139,12 @@
             </div>
           </div>
           <button
-            class="btn btn-outline-light ms-5 me-lg-3"
+            class="btn btn-outline-light ms-5 me-lg-3 navCarrito"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasRight"
             aria-controls="offcanvasRight"
+            onclick="maquetadoCarrito()"
           >
             <i class="bi bi-cart4"></i>
           </button>
