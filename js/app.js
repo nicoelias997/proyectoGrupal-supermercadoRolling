@@ -12,6 +12,8 @@ let grillaLimpieza = document.getElementById("grillaLimpieza");
 let grillaCuidadoPersonal = document.getElementById("grillaCuidadoPersonal");
 let grillaMascotas = document.getElementById("grillaMascotas");
 let carritoContainer = document.getElementById("carritoContainer");
+let precioTotalCompra = 0;
+let total = document.getElementById("total");
 
 //Comprueba si listaProductos tiene algo
 if (listaProductos.length > 0) {
@@ -54,10 +56,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -71,10 +73,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -88,10 +90,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -105,10 +107,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -122,10 +124,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -139,10 +141,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -156,10 +158,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -173,10 +175,10 @@ function maquetadoProducto(producto) {
             <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
             <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-secondary agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
-          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+          <button class="btn btn-outline-secondary " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -193,6 +195,8 @@ function maquetadoCarrito() {
     listaCarrito.map((producto) => {
       maquetadoProdCarrito(producto);
     });
+  } else {
+    total.innerHTML = "0";
   }
 }
 
@@ -213,6 +217,7 @@ function agregarAlCarro(productoCarro) {
     productoAgregado.stock = 1;
     productoAgregado.precioTotal =
       productoAgregado.stock * productoAgregado.precio;
+    precioTotalCompra += productoAgregado.precioTotal;
     listaCarrito.push(productoAgregado);
     guardarCarritoEnLocalStorage();
   }
@@ -245,6 +250,7 @@ function maquetadoProdCarrito(producto) {
         </div>
       </article>
       <hr>`;
+  total.innerHTML = `${precioTotalCompra}`;
 }
 
 function restarCantCarrito(codigoBuscado) {
@@ -255,6 +261,7 @@ function restarCantCarrito(codigoBuscado) {
     productoBuscado.stock--;
     productoBuscado.precioTotal =
       productoBuscado.stock * productoBuscado.precio;
+    precioTotalCompra -= parseInt(productoBuscado.precio);
     guardarCarritoEnLocalStorage();
   }
 
@@ -266,8 +273,8 @@ function sumarCantCarrito(codigoBuscado) {
     (producto) => producto.codigo === codigoBuscado
   );
   productoBuscado.stock++;
-  productoBuscado.precioTotal =
-    productoBuscado.stock * productoBuscado.precio;
+  productoBuscado.precioTotal = productoBuscado.stock * productoBuscado.precio;
+  precioTotalCompra += parseInt(productoBuscado.precio);
   guardarCarritoEnLocalStorage();
 
   maquetadoCarrito();
@@ -277,39 +284,18 @@ function borrarDeCarrito(codigo) {
   let copiaListaCarrito = listaCarrito.filter(
     (producto) => producto.codigo != codigo
   );
+  let productoBuscado = listaCarrito.find(
+    (producto) => producto.codigo === codigo
+  );
+  precioTotalCompra -= productoBuscado.precioTotal;
   listaCarrito = copiaListaCarrito;
+
   //Actualizar el localstorage
   guardarCarritoEnLocalStorage();
   //Actualizar la tabla
   carritoContainer.innerHTML = "";
   maquetadoCarrito();
 }
-
-const total = document.getElementById("total")
-const btnComprar = document.getElementById("btnComprar")
-btnComprar.addEventListener("click", comprarDeCarrito)
-
-// function
-
-
-// function comprarDeCarrito(){
-//   listaCarrito = JSON.parse(localStorage.getItem("listaCarritoKey")) || [];
-  
-//   let copiaLista = listaCarrito.filter(
-//     producto => producto) 
-//     console.log(copiaLista)
-//   let totales = 0;
-//   for(let i = 0; i < copiaLista.length; i++){
-//     totales += copiaLista.precioTotal
-//     console.log(totales)
-//     total.innerHTML += totales
-//   }
-//   console.log(totales)
-
-//   carritoContainer.innerHTML = "";
-//   guardarCarritoEnLocalStorage()
-
-// }
 
 function verDetalle(codigo) {
   window.location.href =
