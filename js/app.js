@@ -41,13 +41,13 @@ if (listaProductos.length > 0) {
 } else {
   //Si es false muestra un mensaje de stock agotado
   grillaTodos.innerHTML = `<h1 class="display-1 fw-bold m-5 text-center">Por el momento no se encuentran productos en la tienda</h1>
-  <h2 class="display-2 fw-bold mb-5">Por favor vuelva a ingresar mas tarde</h2>`;
+  <h2 class="display-2 fw-bold mb-5 text-center">Por favor vuelva a ingresar mas tarde</h2>`;
 }
 
 //Funcion para maquetar el producto que se encuentre en el localStorage en su respectiva seccion
 function maquetadoProducto(producto) {
-  let categoria = producto.genero;
-
+  let categoria = producto.categoria;
+  console.log(categoria);
   //Maqueta todos los productos de la lista
   grillaTodos.innerHTML += `
   <article class="card m-2 p-1" style="width: 15rem;">
@@ -68,18 +68,18 @@ function maquetadoProducto(producto) {
     case "Almacen":
       {
         grillaAlmacen.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
-  <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
-  <div class="card-body">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">${producto.nombre}</li>
-      <li class="list-group-item">${producto.cantidad}</li>
-      <li class="list-group-item">$ ${producto.precio}</li>
-    </ul>
-    <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
-      Agregar
-    </button>
-  </div>
-</article>`;
+        <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
+          </ul>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+            Agregar
+          </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
+        </div>
+      </article>`;
       }
       break;
     case "Bebidas":
@@ -88,13 +88,13 @@ function maquetadoProducto(producto) {
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -105,13 +105,13 @@ function maquetadoProducto(producto) {
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -122,13 +122,13 @@ function maquetadoProducto(producto) {
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -139,30 +139,31 @@ function maquetadoProducto(producto) {
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
       break;
     case "Limpieza":
       {
+        console.log(producto);
         grillaLimpieza.innerHTML += `<article class="card m-2 p-1" style="width: 15rem;">
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -173,13 +174,13 @@ function maquetadoProducto(producto) {
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
@@ -190,13 +191,13 @@ function maquetadoProducto(producto) {
         <img src="${producto.imagen}" class="card-img-top" alt="${producto.nombre}">
         <div class="card-body">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">${producto.nombre}</li>
-            <li class="list-group-item">${producto.cantidad}</li>
-            <li class="list-group-item">$ ${producto.precio}</li>
+            <li class="list-group-item text-truncate"><strong>${producto.nombre}</strong><br>${producto.descripcion}</li>
+            <li class="list-group-item fs-5 fw-bold">$ ${producto.precio}</li>
           </ul>
-          <button class="col-12 btn btn-danger agregarCarro" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
+          <button class="col-12 btn btn-outline-danger agregarCarro mb-1" type="button" onclick='agregarAlCarro("${producto.codigo}")'>
             Agregar
           </button>
+          <button class="btn btn-outline-danger " type="button" onclick="verDetalle('${producto.codigo}')"><i class="bi bi-file-text"></i></button>
         </div>
       </article>`;
       }
