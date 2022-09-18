@@ -196,7 +196,7 @@ function maquetadoCarrito() {
       maquetadoProdCarrito(producto);
     });
   } else {
-    total.innerHTML = "0";
+    total.innerHTML = "Total: $ 0";
   }
 }
 
@@ -250,7 +250,7 @@ function maquetadoProdCarrito(producto) {
         </div>
       </article>
       <hr>`;
-  total.innerHTML = `${precioTotalCompra + precio}`;
+  total.innerHTML = `Total: $ ${precioTotalCompra}`;
 }
 
 function restarCantCarrito(codigoBuscado) {
